@@ -87,7 +87,7 @@ for mat in MATERIALS:
 #Residential case study
 sim1.createScenario(name='Resi_repower', massmodulefile=moduleFile_m, energymodulefile=moduleFile_e) #create the scenario, name and mod file attach
 for mat in MATERIALS:
-    materialfile = os.path.join(baselinesfolder, 'baseline_material_mass_'+str(mat)+'.csv')
+    materialfile_m = os.path.join(baselinesfolder, 'baseline_material_mass_'+str(mat)+'.csv')
     materialfile_e = os.path.join(baselinesfolder, 'baseline_material_energy_'+str(mat)+'.csv')
     sim1.scenario['Resi_repower'].addMaterial(mat, massmatfile=materialfile_m, energymatfile=materialfile_e) # add all materials listed in MATERIALS
 
@@ -163,7 +163,7 @@ sim1_yearly, sim1_cumu = sim1.aggregateResults()
 sim1_allenergy, sim1_energyGen, sim1_energyDemands_all = sim1.aggregateEnergyResults()
 
 
-# In[19]:
+# In[44]:
 
 
 decommisioned = sim1_yearly.filter(like='Decommisioned')
@@ -173,7 +173,7 @@ plt.ylim(0,14)
 plt.ylabel('Decommissioned Capacity [kW_dc]')
 
 
-# In[15]:
+# In[45]:
 
 
 plt.plot(sim1_energyGen/1e6)
@@ -182,17 +182,17 @@ plt.ylim(0,12.0)
 plt.ylabel('Annual Energy Generation [MWh]')
 
 
-# In[72]:
+# In[46]:
 
 
 cumu_energy_gen = sim1_energyGen.cumsum().loc[[2060]]
 cumu_energy_gen_MWh = cumu_energy_gen/1e6
-cumu_energy_gen_MWh.columns = ['Keep_[MWh]', 'Repower_[MWh]']
-cumu_energy_gen_MWh.index=['Energy_Gen']
+cumu_energy_gen_MWh.columns = ['Keep', 'Repower']
+cumu_energy_gen_MWh.index=['Energy Gen [MWh]']
 cumu_energy_gen_MWh
 
 
-# In[73]:
+# In[47]:
 
 
 #sum the energy demands
@@ -200,24 +200,24 @@ energydemand_keep = sim1_energyDemands_all.filter(like='keep').sum(axis=1).sum()
 energydemand_repower = sim1_energyDemands_all.filter(like='repower').sum(axis=1).sum()/1e6 #MWh
 
 
-# In[75]:
+# In[48]:
 
 
 cumu_energy_MWh = cumu_energy_gen_MWh.copy()
-cumu_energy_MWh.loc['Energy_Demand','Keep_[MWh]'] = energydemand_keep
-cumu_energy_MWh.loc['Energy_Demand','Repower_[MWh]'] = energydemand_repower
+cumu_energy_MWh.loc['Energy Demand [MWh]','Keep'] = energydemand_keep
+cumu_energy_MWh.loc['Energy Demand [MWh]','Repower'] = energydemand_repower
 cumu_energy_MWh
 
 
-# In[78]:
+# In[52]:
 
 
 #EROI
-cumu_energy_MWh.loc['EROI'] = cumu_energy_MWh.loc['Energy_Gen']/cumu_energy_MWh.loc['Energy_Demand']
+cumu_energy_MWh.loc['EROI'] = cumu_energy_MWh.loc['Energy Gen [MWh]']/cumu_energy_MWh.loc['Energy Demand [MWh]']
 cumu_energy_MWh
 
 
-# In[50]:
+# In[53]:
 
 
 #material demands
@@ -225,10 +225,38 @@ modmass_keep = sim1_yearly.loc[2015,'VirginStock_Module_SIPS_Resi_keep_[Tonnes]'
 modmass_repower = sim1_yearly.loc[:,'VirginStock_Module_SIPS_Resi_repower_[Tonnes]'].sum()
 
 
-# In[ ]:
+# In[54]:
 
 
+#wastes
+modwaste_keep = sim1_cumu.iloc[-1]['WasteAll_Module_SIPS_Resi_keep_[Tonnes]']
+modwaste_repower = sim1_cumu.iloc[-1]['WasteAll_Module_SIPS_Resi_repower_[Tonnes]']
 
+
+# In[55]:
+
+
+plt.plot(sim1_yearly.loc[:,'VirginStock_Module_SIPS_Resi_keep_[Tonnes]'], label = 'matdemand_keep')
+plt.plot(sim1_yearly.loc[:,'VirginStock_Module_SIPS_Resi_repower_[Tonnes]'], ls='--', label = 'matdemand_repower')
+
+plt.plot(sim1_yearly.loc[:,'WasteAll_Module_SIPS_Resi_keep_[Tonnes]'], label = 'waste_keep')
+plt.plot(sim1_yearly.loc[:,'WasteAll_Module_SIPS_Resi_repower_[Tonnes]'], ls='--', label='waste_repower')
+
+plt.ylim(0,0.5)
+plt.ylabel('Material Demand and Wastes [tonnes]')
+plt.legend()
+
+
+# In[56]:
+
+
+cumu_metrics = cumu_energy_MWh.copy()
+cumu_metrics.loc['Virgin Material Demands [tonnes]','Keep'] = modmass_keep
+cumu_metrics.loc['Virgin Material Demands [tonnes]','Repower'] = modmass_repower
+cumu_metrics.loc['Wastes [tonnes]', 'Keep'] = modwaste_keep
+cumu_metrics.loc['Wastes [tonnes]', 'Repower'] = modwaste_repower
+
+round(cumu_metrics,2)
 
 
 # # Commercial Case Study
