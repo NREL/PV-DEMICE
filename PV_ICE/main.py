@@ -1648,18 +1648,18 @@ class Simulation:
         carbonfolder = Path(DATA_PATH) / 'CarbonLayer'
         
         if countrygridmixes is None:
-            countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline2100_countrygridmix.csv'))#1995-2100
+            countrygridmixes_full = pd.read_csv(os.path.join(carbonfolder,'baseline2100_countrygridmix.csv'))#1995-2100
         else:
             if isinstance(countrygridmixes, str):
-                countrygridmixes = pd.read_csv(countrygridmixes)
-            if isinstance(countrygridmixes, object):
-                countrygridmixes = countrygridmixes
+                countrygridmixes_full = pd.read_csv(countrygridmixes)
+            if isinstance(countrygridmixes_full, object):
+                countrygridmixes_full = countrygridmixes_full
         
         #default files
         gridemissionfactors = pd.read_csv(os.path.join(carbonfolder,'baseline_electricityemissionfactors.csv')) #no date
         materialprocesscarbon = pd.read_csv(os.path.join(carbonfolder,'baseline_materials_processCO2.csv'), index_col='Material') #no date
         #countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline_countrygridmix.csv')) #2000-2050 or 2100
-        countrymodmfg = pd.read_csv(os.path.join(carbonfolder,'baseline_module_countrymarketshare.csv')) #1995-2100
+        countrymodmfg_full = pd.read_csv(os.path.join(carbonfolder,'baseline_module_countrymarketshare.csv')) #1995-2100
         
         
         
@@ -1671,6 +1671,15 @@ class Simulation:
             #df_in = self.scenario[scen].dataIn_m
             de = self.scenario[scen].dataOut_e
             #de_in = self.scenario[scen].dataIn_e
+            
+            #select years of carbon data to use in calc based on scen out of 1995-2100
+            scenStartYear = int(self.scenario[scen].dataIn_m.iloc[0]['year'])
+            scenEndYear = int(self.scenario[scen].dataIn_m.iloc[-1]['year'])
+            
+            countrymodmfg = countrymodmfg_full[(countrymodmfg_full.iloc[:,0]>=scenStartYear) & (countrymodmfg_full.iloc[:,0]<=scenEndYear)]
+            countrygridmixes = countrygridmixes_full[(countrygridmixes_full.iloc[:,0]>=scenStartYear) & (countrygridmixes_full.iloc[:,0]<=scenEndYear)]
+            countrymodmfg.reset_index(inplace=True, drop=True) #reset the index and don't include the old in new df
+            countrygridmixes.reset_index(inplace=True, drop=True) #reset the index and don't include the old in new df
             
             #carbon intensity of country grid mixes
             #extract lists
@@ -1750,7 +1759,11 @@ class Simulation:
                     dm = self.scenario[scen].material[mat].matdataOut_m               
                     
                     matfilename = 'baseline_'+str(mat)+'_MFGing_countrymarketshare.csv' #1995-2100
-                    countrymatmfg = pd.read_csv(os.path.join(carbonfolder, matfilename))
+                    countrymatmfg_full = pd.read_csv(os.path.join(carbonfolder, matfilename))
+                    
+                    #trim to scenario years
+                    countrymatmfg = countrymatmfg_full[(countrymatmfg_full.iloc[:,0]>=scenStartYear) & (countrymatmfg_full.iloc[:,0]<=scenEndYear)]
+                    countrymatmfg.reset_index(inplace=True, drop=True) #reset the index and don't include the old in new df
                 
                     #carbon intensity of material manufacturing weighted by country
                     #list countries mfging material

@@ -60,7 +60,7 @@ for scen in scennames:
 
 #sim1.modifyScenario('test1', 'mod_EOL_collection_eff', 100.0, start_year=2022) #100% collection
 #sim1.scenario['test1'].modifyMaterials('glass', 'mat_MFG_scrap_Recycled', 100.0, start_year=2022)
-sim1.trim_Years(startYear=2000, endYear=2100)
+sim1.trim_Years(startYear=2010, endYear=2060)
 #sim1.modifyScenario(scenarios=None,stage='new_Installed_Capacity_[MW]', value= global_projection['World_annual_[MWdc]'], start_year=2000)
 
 

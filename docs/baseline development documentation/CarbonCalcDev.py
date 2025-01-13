@@ -40,45 +40,49 @@ de_in = pd.read_pickle('dataIn_e.pkl')
 df
 
 
-# In[12]:
+# In[4]:
 
 
 gridemissionfactors = pd.read_csv(os.path.join(carbonfolder,'baseline_electricityemissionfactors.csv'))
 materialprocesscarbon = pd.read_csv(os.path.join(carbonfolder,'baseline_materials_processCO2.csv'), index_col='Material')
-countrygridmixes = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_countrygridmix.csv')) #2000 to 2050 or 2100
-countrymodmfg = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_module_countrymarketshare.csv')) #currently 2000 to 2100 or 2050
+countrygridmixes_full = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_countrygridmix.csv')) #2000 to 2050 or 2100
+countrymodmfg_full = pd.read_csv(os.path.join(carbonfolder, 'baseline_module_countrymarketshare.csv')) #currently 2000 to 2100 or 2050
 
 #baseline_module_countrymarketshare = 1995 to 2050
 #
 
 
-# In[ ]:
+# In[5]:
 
 
-scen0 = scenarios[0] #static scenario of the first in the list
-dataStartYear = int(self.scenario[scen0].dataIn_m.iloc[0]['year'])
-dataEndYear = int(self.scenario[scen0].dataIn_m.iloc[-1]['year'])
+scenStartYear = int(df_in.iloc[0]['year'])
+scenEndYear = int(df_in.iloc[-1]['year'])
+            
+countrymodmfg = countrymodmfg_full[(countrymodmfg_full.iloc[:,0]>=scenStartYear) & (countrymodmfg_full.iloc[:,0]<=scenEndYear)]
+countrygridmixes = countrygridmixes_full[(countrygridmixes_full.iloc[:,0]>=scenStartYear) & (countrygridmixes_full.iloc[:,0]<=scenEndYear)]
+countrymodmfg.reset_index(inplace=True, drop=True) #reset the index and don't include the old in new df
+countrygridmixes.reset_index(inplace=True, drop=True) #reset the index and don't include the old in new df
 
 
-# In[13]:
+#         scen0 = scenarios[0] #static scenario of the first in the list
+# scenStartYear = int(self.scenario[scen0].dataIn_m.iloc[0]['year'])
+# scenEndYear = int(self.scenario[scen0].dataIn_m.iloc[-1]['year'])
 
+#                     if int(endYear) > int(dataEndYear): # extend data with start trimming
+#                         lengthtoadd = int(endYear) - int(dataEndYear)
+#                         newIndex = pd.RangeIndex(0,lengthtoadd,1) #create a new index to append
+#                         add = pd.DataFrame(columns=baseline.columns, index=newIndex) #create empty df, using new index
+#                         extended = pd.concat([reduced,add]) #concat the trimmed df with the new extended years
+#                         
+#                         extended.reset_index(inplace=True, drop=True) #reset the index and don't include the old in new df
+#                         extended.ffill(inplace=True) #forward fill columns
+#                         # fix years
+#                         newYears = pd.Series(range(dataEndYear+1,endYear+1,1)) #create a series of years to overwrite the ffill
+#                         extended.loc[len(reduced):,'year'] = newYears.values
+#                         #print(extended.tail(5))
+#                         self.scenario[scen].dataIn_e = extended #reassign to the simulation
 
-if int(endYear) > int(dataEndYear): # extend data with start trimming
-    lengthtoadd = int(endYear) - int(dataEndYear)
-    newIndex = pd.RangeIndex(0,lengthtoadd,1) #create a new index to append
-    add = pd.DataFrame(columns=baseline.columns, index=newIndex) #create empty df, using new index
-    extended = pd.concat([reduced,add]) #concat the trimmed df with the new extended years
-    
-    extended.reset_index(inplace=True, drop=True) #reset the index and don't include the old in new df
-    extended.ffill(inplace=True) #forward fill columns
-    # fix years
-    newYears = pd.Series(range(dataEndYear+1,endYear+1,1)) #create a series of years to overwrite the ffill
-    extended.loc[len(reduced):,'year'] = newYears.values
-    #print(extended.tail(5))
-    self.scenario[scen].dataIn_e = extended #reassign to the simulation
-
-
-# In[14]:
+# In[6]:
 
 
 #carbon intensity of country grid mixes
@@ -104,19 +108,19 @@ country_carbonpkwh = pd.DataFrame(final_country_carbon_int).T
 country_carbonpkwh.columns = countrylist
 
 
-# In[15]:
+# In[7]:
 
 
 fuelemitfactor
 
 
-# In[16]:
+# In[8]:
 
 
 country_carbonpkwh
 
 
-# In[17]:
+# In[9]:
 
 
 #carbon intensity of module manufacturing weighted by country
@@ -135,19 +139,19 @@ modmfg_co2eqpkwh_bycountry = pd.DataFrame(countrycarbon_modmfg_co2eqpkwh).T #
 modmfg_co2eqpkwh_bycountry['Global_kgCO2eqpkWh'] = modmfg_co2eqpkwh_bycountry.sum(axis=1) #annual carbon intensity of pv module mfg wtd by country
 
 
-# In[18]:
+# In[10]:
 
 
-de
+country_carbonpkwh[country]
 
 
-# In[19]:
+# In[11]:
 
 
 modmfg_co2eqpkwh_bycountry
 
 
-# In[20]:
+# In[12]:
 
 
 #carbon impacts module mfging wtd by country
@@ -157,7 +161,7 @@ dc = dc.add_suffix('_mod_MFG_kgCO2eq')
 
 
 
-# In[21]:
+# In[13]:
 
 
 #carbon impacts other module level steps
@@ -173,7 +177,7 @@ dc['mod_ReMFG_Disassembly_kgCO2eq'] = de['mod_ReMFG_Disassembly']*country_carbon
 dc['mod_Recycle_Crush_kgCO2eq'] = de['mod_Recycle_Crush']*country_carbonpkwh[country_deploy]
 
 
-# In[22]:
+# In[14]:
 
 
 dc.tail()
@@ -181,7 +185,7 @@ dc.tail()
 
 # # Material Level
 
-# In[23]:
+# In[ ]:
 
 
 matEnergy = pd.read_pickle('matdataIn_e.pkl')
@@ -193,7 +197,7 @@ dm = pd.read_pickle('matdataOut_m.pkl')
 #e_mat_Recycled_HQ_fuelfraction
 
 
-# In[24]:
+# In[ ]:
 
 
 countrymatmfg = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_silicon_MFGing_countrymarketshare.csv')) #2000-2100
@@ -202,7 +206,7 @@ countrymatmfg = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_silicon_MFG
 mat='silicon'
 
 
-# In[25]:
+# In[ ]:
 
 
 #carbon intensity of material manufacturing weighted by country
@@ -221,13 +225,13 @@ matmfg_co2eqpkwh_bycountry = pd.DataFrame(countrycarbon_modmfg_co2eqpkwh).T #
 matmfg_co2eqpkwh_bycountry['Global_kgCO2eqpkWh'] = modmfg_co2eqpkwh_bycountry.sum(axis=1) #annual carbon intensity of pv module mfg wtd by country
 
 
-# In[27]:
+# In[ ]:
 
 
 matmfg_co2eqpkwh_bycountry
 
 
-# In[28]:
+# In[ ]:
 
 
 #carbon impacts mat mfging wtd by country
@@ -242,13 +246,13 @@ dcmat['mat_MFG_virgin_fuel_kgCO2eq'] = demat['mat_MFG_virgin_fuel']*steamHeat #C
 dcmat['mat_MFGScrap_HQ_fuel_kgCO2eq'] = demat['mat_MFGScrap_HQ_fuel']*steamHeat #CO2 from recycling fuels
 
 
-# In[29]:
+# In[ ]:
 
 
 dcmat
 
 
-# In[31]:
+# In[ ]:
 
 
 #CO2 process emissions from MFGing (v, lq, hq)
@@ -262,13 +266,13 @@ dcmat['mat_HQeol_gCO2eq'] = dm['mat_EOL_Recycled_2_HQ']*materialprocesscarbon.lo
 dcmat['mat_HQ_gCO2eq'] = dcmat['mat_HQmfg_gCO2eq']+dcmat['mat_HQeol_gCO2eq'] 
 
 
-# In[32]:
+# In[ ]:
 
 
 dcmat
 
 
-# In[33]:
+# In[ ]:
 
 
 #sum carbon stuff
