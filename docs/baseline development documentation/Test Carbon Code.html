@@ -15416,7 +15416,7 @@ Working on Scenario:  PV_ICE
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">calculateCarbonFlows</span><span class="p">()</span>
@@ -15447,6 +15447,8 @@ Working on Scenario:  PV_ICE
 
 Working on Scenario:  PV_ICE
 ********************
+Working on Carbon for Module
+==&gt; Working on Carbon for Material :  aluminium_frames
 </pre>
 </div>
 </div>
@@ -15455,12 +15457,12 @@ Working on Scenario:  PV_ICE
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="s1">'PV_ICE'</span><span class="p">]</span><span class="o">.</span><span class="n">dataOut_c</span>
@@ -15471,12 +15473,345 @@ Working on Scenario:  PV_ICE
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>China_mod_MFG_gCO2eq</th>
+      <th>India_mod_MFG_gCO2eq</th>
+      <th>Taiwan_mod_MFG_gCO2eq</th>
+      <th>Germany_mod_MFG_gCO2eq</th>
+      <th>Japan_mod_MFG_gCO2eq</th>
+      <th>South Korea_mod_MFG_gCO2eq</th>
+      <th>Canada_mod_MFG_gCO2eq</th>
+      <th>Mexico_mod_MFG_gCO2eq</th>
+      <th>USA_mod_MFG_gCO2eq</th>
+      <th>Viet Nam_mod_MFG_gCO2eq</th>
+      <th>...</th>
+      <th>El Salvador_mod_MFG_gCO2eq</th>
+      <th>Global_mod_MFG_gCO2eq</th>
+      <th>mod_Install_gCO2eq</th>
+      <th>mod_OandM_gCO2eq</th>
+      <th>mod_Repair_gCO2eq</th>
+      <th>mod_Demount_gCO2eq</th>
+      <th>mod_Store_gCO2eq</th>
+      <th>mod_Resell_Certify_gCO2eq</th>
+      <th>mod_ReMFG_Disassembly_gCO2eq</th>
+      <th>mod_Recycle_Crush_gCO2eq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.627071e+08</td>
+      <td>9.644618e+07</td>
+      <td>1.646813e+07</td>
+      <td>4.642611e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.452502e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>3.371536e+08</td>
+      <td>3.412700e+05</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.111842e+08</td>
+      <td>1.300427e+08</td>
+      <td>2.261265e+07</td>
+      <td>6.144540e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>2.020351e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>4.462220e+08</td>
+      <td>4.518125e+05</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.187577e-03</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.256905e-03</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.254356e+08</td>
+      <td>1.998410e+08</td>
+      <td>3.447529e+07</td>
+      <td>9.410588e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>2.947249e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>6.845688e+08</td>
+      <td>6.703853e+05</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.688010e-01</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>7.142947e-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.692348e+08</td>
+      <td>2.822845e+08</td>
+      <td>4.954668e+07</td>
+      <td>1.343173e+08</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>4.264192e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>9.798194e+08</td>
+      <td>9.416026e+05</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.220025e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.394210e+00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.338408e+08</td>
+      <td>4.276440e+08</td>
+      <td>7.848118e+07</td>
+      <td>2.082943e+08</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>6.312775e+07</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>1.514316e+09</td>
+      <td>1.473139e+06</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.393431e+01</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.896412e+01</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>3.770234e+11</td>
+      <td>1.394729e+10</td>
+      <td>4.205538e+09</td>
+      <td>1.911035e+09</td>
+      <td>1.327243e+09</td>
+      <td>7.767945e+09</td>
+      <td>2.667802e+08</td>
+      <td>1.134708e+09</td>
+      <td>2.901830e+09</td>
+      <td>1.764484e+10</td>
+      <td>...</td>
+      <td>6.527059e+06</td>
+      <td>4.542803e+11</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.867861e+09</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>3.770234e+11</td>
+      <td>1.394729e+10</td>
+      <td>4.205538e+09</td>
+      <td>1.911035e+09</td>
+      <td>1.327243e+09</td>
+      <td>7.767945e+09</td>
+      <td>2.667802e+08</td>
+      <td>1.134708e+09</td>
+      <td>2.901830e+09</td>
+      <td>1.764484e+10</td>
+      <td>...</td>
+      <td>6.527059e+06</td>
+      <td>4.542803e+11</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.867861e+09</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>3.770234e+11</td>
+      <td>1.394729e+10</td>
+      <td>4.205538e+09</td>
+      <td>1.911035e+09</td>
+      <td>1.327243e+09</td>
+      <td>7.767945e+09</td>
+      <td>2.667802e+08</td>
+      <td>1.134708e+09</td>
+      <td>2.901830e+09</td>
+      <td>1.764484e+10</td>
+      <td>...</td>
+      <td>6.527059e+06</td>
+      <td>4.542803e+11</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.867861e+09</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>3.770234e+11</td>
+      <td>1.394729e+10</td>
+      <td>4.205538e+09</td>
+      <td>1.911035e+09</td>
+      <td>1.327243e+09</td>
+      <td>7.767945e+09</td>
+      <td>2.667802e+08</td>
+      <td>1.134708e+09</td>
+      <td>2.901830e+09</td>
+      <td>1.764484e+10</td>
+      <td>...</td>
+      <td>6.527059e+06</td>
+      <td>4.542803e+11</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.867861e+09</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>3.770234e+11</td>
+      <td>1.394729e+10</td>
+      <td>4.205538e+09</td>
+      <td>1.911035e+09</td>
+      <td>1.327243e+09</td>
+      <td>7.767945e+09</td>
+      <td>2.667802e+08</td>
+      <td>1.134708e+09</td>
+      <td>2.901830e+09</td>
+      <td>1.764484e+10</td>
+      <td>...</td>
+      <td>6.527059e+06</td>
+      <td>4.542803e+11</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.140467e+08</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.867861e+09</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 29 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="s1">'PV_ICE'</span><span class="p">]</span><span class="o">.</span><span class="n">material</span><span class="p">[</span><span class="s1">'aluminium_frames'</span><span class="p">]</span><span class="o">.</span><span class="n">matdataOut_c</span>
@@ -15485,6 +15820,339 @@ Working on Scenario:  PV_ICE
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>China_vmfg_elec_gCO2eq</th>
+      <th>Canada_vmfg_elec_gCO2eq</th>
+      <th>Iceland_vmfg_elec_gCO2eq</th>
+      <th>India_vmfg_elec_gCO2eq</th>
+      <th>Russia_vmfg_elec_gCO2eq</th>
+      <th>UAE_vmfg_elec_gCO2eq</th>
+      <th>USA_vmfg_elec_gCO2eq</th>
+      <th>South Africa_vmfg_elec_gCO2eq</th>
+      <th>Brazil_vmfg_elec_gCO2eq</th>
+      <th>Australia_vmfg_elec_gCO2eq</th>
+      <th>...</th>
+      <th>mat_Recycled_HQ_fuel_gCO2eq</th>
+      <th>mat_landfill_elec_gCO2eq</th>
+      <th>mat_EoL_ReMFG_clean_elec_gCO2eq</th>
+      <th>mat_Recycled_LQ_elec_gCO2eq</th>
+      <th>mat_Recycled_HQ_elec_gCO2eq</th>
+      <th>mat_vMFG_p_gCO2eq</th>
+      <th>mat_LQmfg_p_gCO2eq</th>
+      <th>mat_LQeol_p_gCO2eq</th>
+      <th>mat_HQmfg_p_gCO2eq</th>
+      <th>mat_HQeol_p_gCO2eq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.112500e+08</td>
+      <td>1.626852e+08</td>
+      <td>0.000000</td>
+      <td>1.023774e+08</td>
+      <td>4.227693e+08</td>
+      <td>8.526493e+07</td>
+      <td>6.163965e+08</td>
+      <td>3.055393e+08</td>
+      <td>3.153346e+07</td>
+      <td>5.179547e+08</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>9.668206e+04</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>2.481974e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8.916472e+08</td>
+      <td>2.326894e+08</td>
+      <td>0.000000</td>
+      <td>1.091645e+08</td>
+      <td>5.433168e+08</td>
+      <td>1.346621e+08</td>
+      <td>6.110627e+08</td>
+      <td>5.930789e+08</td>
+      <td>5.262661e+07</td>
+      <td>8.674552e+08</td>
+      <td>...</td>
+      <td>2.326350e-02</td>
+      <td>1.255573e+05</td>
+      <td>0.0</td>
+      <td>8.407074e-02</td>
+      <td>5.932031e-03</td>
+      <td>3.212712e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.692604e+09</td>
+      <td>3.010308e+08</td>
+      <td>441494.412080</td>
+      <td>1.155985e+08</td>
+      <td>7.473473e+08</td>
+      <td>2.836028e+08</td>
+      <td>7.846322e+08</td>
+      <td>8.056462e+08</td>
+      <td>6.905785e+07</td>
+      <td>1.200021e+09</td>
+      <td>...</td>
+      <td>1.819338e+00</td>
+      <td>1.829740e+05</td>
+      <td>0.0</td>
+      <td>6.485101e+00</td>
+      <td>4.575887e-01</td>
+      <td>4.746538e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.767093e+09</td>
+      <td>4.523948e+08</td>
+      <td>171953.685716</td>
+      <td>4.532870e+08</td>
+      <td>9.790673e+08</td>
+      <td>2.458167e+08</td>
+      <td>1.233332e+09</td>
+      <td>9.224294e+08</td>
+      <td>8.948978e+07</td>
+      <td>1.330095e+09</td>
+      <td>...</td>
+      <td>2.371072e+01</td>
+      <td>2.540855e+05</td>
+      <td>0.0</td>
+      <td>8.514993e+01</td>
+      <td>6.008179e+00</td>
+      <td>6.541164e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.768540e+09</td>
+      <td>5.647731e+08</td>
+      <td>0.000000</td>
+      <td>4.673585e+08</td>
+      <td>1.456757e+09</td>
+      <td>6.280002e+08</td>
+      <td>1.309449e+09</td>
+      <td>1.862972e+09</td>
+      <td>1.497235e+08</td>
+      <td>2.295959e+09</td>
+      <td>...</td>
+      <td>1.491671e+02</td>
+      <td>3.871421e+05</td>
+      <td>0.0</td>
+      <td>5.331129e+02</td>
+      <td>3.761645e+01</td>
+      <td>1.000862e+10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>1.260711e+12</td>
+      <td>2.305339e+10</td>
+      <td>0.000000</td>
+      <td>1.508586e+11</td>
+      <td>9.780585e+10</td>
+      <td>6.483672e+10</td>
+      <td>2.734513e+10</td>
+      <td>9.193386e+10</td>
+      <td>1.169855e+10</td>
+      <td>7.625077e+10</td>
+      <td>...</td>
+      <td>6.679020e+09</td>
+      <td>9.774390e+09</td>
+      <td>0.0</td>
+      <td>1.650378e+10</td>
+      <td>1.164507e+09</td>
+      <td>4.439464e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>1.260711e+12</td>
+      <td>2.305339e+10</td>
+      <td>0.000000</td>
+      <td>1.508586e+11</td>
+      <td>9.780585e+10</td>
+      <td>6.483672e+10</td>
+      <td>2.734513e+10</td>
+      <td>9.193386e+10</td>
+      <td>1.169855e+10</td>
+      <td>7.625077e+10</td>
+      <td>...</td>
+      <td>6.679020e+09</td>
+      <td>9.774390e+09</td>
+      <td>0.0</td>
+      <td>1.650378e+10</td>
+      <td>1.164507e+09</td>
+      <td>4.439464e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>1.260711e+12</td>
+      <td>2.305339e+10</td>
+      <td>0.000000</td>
+      <td>1.508586e+11</td>
+      <td>9.780585e+10</td>
+      <td>6.483672e+10</td>
+      <td>2.734513e+10</td>
+      <td>9.193386e+10</td>
+      <td>1.169855e+10</td>
+      <td>7.625077e+10</td>
+      <td>...</td>
+      <td>6.679020e+09</td>
+      <td>9.774390e+09</td>
+      <td>0.0</td>
+      <td>1.650378e+10</td>
+      <td>1.164507e+09</td>
+      <td>4.439464e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>1.260711e+12</td>
+      <td>2.305339e+10</td>
+      <td>0.000000</td>
+      <td>1.508586e+11</td>
+      <td>9.780585e+10</td>
+      <td>6.483672e+10</td>
+      <td>2.734513e+10</td>
+      <td>9.193386e+10</td>
+      <td>1.169855e+10</td>
+      <td>7.625077e+10</td>
+      <td>...</td>
+      <td>6.679020e+09</td>
+      <td>9.774390e+09</td>
+      <td>0.0</td>
+      <td>1.650378e+10</td>
+      <td>1.164507e+09</td>
+      <td>4.439464e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>1.260711e+12</td>
+      <td>2.305339e+10</td>
+      <td>0.000000</td>
+      <td>1.508586e+11</td>
+      <td>9.780585e+10</td>
+      <td>6.483672e+10</td>
+      <td>2.734513e+10</td>
+      <td>9.193386e+10</td>
+      <td>1.169855e+10</td>
+      <td>7.625077e+10</td>
+      <td>...</td>
+      <td>6.679020e+09</td>
+      <td>9.774390e+09</td>
+      <td>0.0</td>
+      <td>1.650378e+10</td>
+      <td>1.164507e+09</td>
+      <td>4.439464e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 25 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">

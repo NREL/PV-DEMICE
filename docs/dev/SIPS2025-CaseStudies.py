@@ -273,7 +273,8 @@ sim1.calculateCarbonFlows()
 # In[25]:
 
 
-sim1.scenario['Resi_keep'].dataOut_c.head(60)
+sim1.scenario['Resi_keep'].dataOut_c.head(60) 
+#nans are expected becuase the default files are 2000-2100, and this scenarios is 2010 to 2060
 
 
 # # Commercial Case Study

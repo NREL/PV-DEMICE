@@ -1648,7 +1648,7 @@ class Simulation:
         carbonfolder = Path(DATA_PATH) / 'CarbonLayer'
         
         if countrygridmixes is None:
-            countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline2100_countrygridmix.csv'))#2000-2100
+            countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline2100_countrygridmix.csv'))#2000-2100 OR 2000-2050
         else:
             if isinstance(countrygridmixes, str):
                 countrygridmixes = pd.read_csv(countrygridmixes)
