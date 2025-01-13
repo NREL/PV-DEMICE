@@ -64,10 +64,12 @@ resi_sys1_size = 0.00552 #MW, first system on roof (degrades to 5 kW in 2024 aft
 resi_sys1_deg = 1.1 #%/yr, corresponds to 20 yr life
 resi_sys1_life = 20 #years of life
 resi_sys1_life_repower = 9 #years of life but remove for repowering
+resi_sys1_eff = 19.02 #from SAM, PV ICE 2015 eff = 17%
 
 resi_sys2_size = 0.0073 #MW, 2nd system on roof
 resi_sys2_deg = 0.7 #%/yr, corresponds to 30 yr life
 resi_sys2_life = 30 #years of life
+resi_sys2_eff = 20.57 #from SAM, PV ICE 2024 eff = 22.4%
 
 
 # In[5]:
@@ -108,6 +110,7 @@ sim1.modifyScenario(scenarios='Resi_keep',stage='new_Installed_Capacity_[MW]', v
 sim1.scenario['Resi_keep'].dataIn_m.loc[2015-1995, 'new_Installed_Capacity_[MW]'] = resi_sys1_size
 sim1.scenario['Resi_keep'].dataIn_m.loc[2015-1995, 'mod_degradation'] = resi_sys1_deg
 sim1.scenario['Resi_keep'].dataIn_m.loc[2015-1995, 'mod_lifetime'] = resi_sys1_life
+sim1.scenario['Resi_keep'].dataIn_m.loc[2015-1995, 'mod_eff'] = resi_sys1_eff
 
 
 # In[8]:
@@ -119,10 +122,12 @@ sim1.modifyScenario(scenarios='Resi_repower',stage='new_Installed_Capacity_[MW]'
 sim1.scenario['Resi_repower'].dataIn_m.loc[2015-1995, 'new_Installed_Capacity_[MW]'] = resi_sys1_size
 sim1.scenario['Resi_repower'].dataIn_m.loc[2015-1995, 'mod_degradation'] = resi_sys1_deg
 sim1.scenario['Resi_repower'].dataIn_m.loc[2015-1995, 'mod_lifetime'] = resi_sys1_life_repower
+sim1.scenario['Resi_repower'].dataIn_m.loc[2015-1995, 'mod_eff'] = resi_sys1_eff
 
 sim1.scenario['Resi_repower'].dataIn_m.loc[2024-1995, 'new_Installed_Capacity_[MW]'] = resi_sys2_size
 sim1.scenario['Resi_repower'].dataIn_m.loc[2024-1995, 'mod_degradation'] = resi_sys2_deg
 sim1.scenario['Resi_repower'].dataIn_m.loc[2024-1995, 'mod_lifetime'] = resi_sys2_life
+sim1.scenario['Resi_repower'].dataIn_m.loc[2024-1995, 'mod_eff'] = resi_sys2_eff
 
 
 # In[9]:
@@ -163,7 +168,7 @@ sim1_yearly, sim1_cumu = sim1.aggregateResults()
 sim1_allenergy, sim1_energyGen, sim1_energyDemands_all = sim1.aggregateEnergyResults()
 
 
-# In[44]:
+# In[14]:
 
 
 decommisioned = sim1_yearly.filter(like='Decommisioned')
@@ -173,7 +178,7 @@ plt.ylim(0,14)
 plt.ylabel('Decommissioned Capacity [kW_dc]')
 
 
-# In[45]:
+# In[15]:
 
 
 plt.plot(sim1_energyGen/1e6)
@@ -182,7 +187,7 @@ plt.ylim(0,12.0)
 plt.ylabel('Annual Energy Generation [MWh]')
 
 
-# In[46]:
+# In[16]:
 
 
 cumu_energy_gen = sim1_energyGen.cumsum().loc[[2060]]
@@ -192,7 +197,7 @@ cumu_energy_gen_MWh.index=['Energy Gen [MWh]']
 cumu_energy_gen_MWh
 
 
-# In[47]:
+# In[17]:
 
 
 #sum the energy demands
@@ -200,7 +205,7 @@ energydemand_keep = sim1_energyDemands_all.filter(like='keep').sum(axis=1).sum()
 energydemand_repower = sim1_energyDemands_all.filter(like='repower').sum(axis=1).sum()/1e6 #MWh
 
 
-# In[48]:
+# In[18]:
 
 
 cumu_energy_MWh = cumu_energy_gen_MWh.copy()
@@ -209,7 +214,7 @@ cumu_energy_MWh.loc['Energy Demand [MWh]','Repower'] = energydemand_repower
 cumu_energy_MWh
 
 
-# In[52]:
+# In[19]:
 
 
 #EROI
@@ -217,7 +222,7 @@ cumu_energy_MWh.loc['EROI'] = cumu_energy_MWh.loc['Energy Gen [MWh]']/cumu_energ
 cumu_energy_MWh
 
 
-# In[53]:
+# In[20]:
 
 
 #material demands
@@ -225,7 +230,7 @@ modmass_keep = sim1_yearly.loc[2015,'VirginStock_Module_SIPS_Resi_keep_[Tonnes]'
 modmass_repower = sim1_yearly.loc[:,'VirginStock_Module_SIPS_Resi_repower_[Tonnes]'].sum()
 
 
-# In[54]:
+# In[21]:
 
 
 #wastes
@@ -233,7 +238,7 @@ modwaste_keep = sim1_cumu.iloc[-1]['WasteAll_Module_SIPS_Resi_keep_[Tonnes]']
 modwaste_repower = sim1_cumu.iloc[-1]['WasteAll_Module_SIPS_Resi_repower_[Tonnes]']
 
 
-# In[55]:
+# In[22]:
 
 
 plt.plot(sim1_yearly.loc[:,'VirginStock_Module_SIPS_Resi_keep_[Tonnes]'], label = 'matdemand_keep')
@@ -247,7 +252,7 @@ plt.ylabel('Material Demand and Wastes [tonnes]')
 plt.legend()
 
 
-# In[56]:
+# In[23]:
 
 
 cumu_metrics = cumu_energy_MWh.copy()
@@ -257,6 +262,18 @@ cumu_metrics.loc['Wastes [tonnes]', 'Keep'] = modwaste_keep
 cumu_metrics.loc['Wastes [tonnes]', 'Repower'] = modwaste_repower
 
 round(cumu_metrics,2)
+
+
+# In[24]:
+
+
+sim1.calculateCarbonFlows()
+
+
+# In[25]:
+
+
+sim1.scenario['Resi_keep'].dataOut_c.head(60)
 
 
 # # Commercial Case Study
