@@ -60,29 +60,59 @@ for scen in scennames:
 
 #sim1.modifyScenario('test1', 'mod_EOL_collection_eff', 100.0, start_year=2022) #100% collection
 #sim1.scenario['test1'].modifyMaterials('glass', 'mat_MFG_scrap_Recycled', 100.0, start_year=2022)
-#sim1.trim_Years(startYear=2000, endYear=2100)
+sim1.trim_Years(startYear=2000, endYear=2100)
 #sim1.modifyScenario(scenarios=None,stage='new_Installed_Capacity_[MW]', value= global_projection['World_annual_[MWdc]'], start_year=2000)
 
 
 # In[6]:
 
 
-sim1.calculateFlows()
+sim1.scenario['PV_ICE'].dataIn_m.tail(3)
 
 
 # In[7]:
 
 
+sim1.scenario['PV_ICE'].dataIn_e.tail(3)
+
+
+# In[8]:
+
+
+sim1.scenario['PV_ICE'].material['aluminium_frames'].matdataIn_m.tail(3)
+
+
+# In[9]:
+
+
+sim1.scenario['PV_ICE'].material['aluminium_frames'].matdataIn_e.tail(3)
+
+
+# In[ ]:
+
+
+
+
+
+# In[10]:
+
+
+sim1.calculateFlows()
+
+
+# In[11]:
+
+
 sim1.calculateCarbonFlows()
 
 
-# In[13]:
+# In[12]:
 
 
 sim1.scenario['PV_ICE'].dataOut_c
 
 
-# In[12]:
+# In[13]:
 
 
 sim1.scenario['PV_ICE'].material['aluminium_frames'].matdataOut_c

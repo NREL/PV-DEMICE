@@ -35,13 +35,13 @@ print("pyplot ", plt.matplotlib.__version__)
 #print("PV_ICE version ", PV_ICE.__version__)
 
 
-# In[4]:
+# In[6]:
 
 
-url = 'https://ember-climate.org/app/uploads/2022/07/yearly_full_release_long_format.csv'
+url = 'https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/yearly_full_release_long_format.csv'
 
 
-# In[5]:
+# In[7]:
 
 
 storage_options = {'User-Agent': 'Mozilla/5.0'}
@@ -50,7 +50,7 @@ emberdata_raw = pd.read_csv(url, storage_options=storage_options)
 emberdata_raw.head()
 
 
-# In[6]:
+# In[8]:
 
 
 #down select for only columsn of interest
@@ -68,13 +68,13 @@ emberdata_vars_perc.reset_index(drop=True, inplace=True)
 emberdata_vars_perc
 
 
-# In[7]:
+# In[9]:
 
 
 emberdata_vars_perc['Area'].unique()
 
 
-# In[8]:
+# In[10]:
 
 
 #munge the Area strings into a more usable format (this takes a while!)
@@ -100,20 +100,20 @@ for row in range(0,len(emberdata_vars_perc_rename['Area'])):
 #emberdata_vars_perc['Area'].unique()
 
 
-# In[9]:
+# In[11]:
 
 
 emberdata_vars_perc_rename.loc[emberdata_vars_perc_rename['Area']=="Laos"]
 
 
-# In[10]:
+# In[12]:
 
 
 #emberdata_vars_perc.loc[emberdata_vars_perc['Area']=="Bahamas (the)"]
 emberdata_vars_perc_rename['Area'].unique()
 
 
-# In[11]:
+# In[13]:
 
 
 #for unique values of renamed area, do a pivot table with year on index, variable on column, and value in thingy
@@ -128,7 +128,7 @@ for a in range(0,len(Areas)):
 gridmix_bycountry_2000topresent
 
 
-# In[12]:
+# In[14]:
 
 
 #add in the 1995 to 2000 and present to 2050, ffill and bfill
@@ -146,10 +146,26 @@ areaofinterest = 'Bosnia'
 gridmix_bycountry_1995to2050_full.filter(like=areaofinterest).plot(kind='area', legend='reverse').legend(bbox_to_anchor=(1, 0.5))
 
 
-# In[14]:
+# In[16]:
 
 
-gridmix_bycountry_1995to2050_full.to_csv(os.path.join(baselinesFolder,'CarbonLayer','baseline_countrygridmix.csv'))
+gridmix_bycountry_1995to2050_full.to_csv(os.path.join(baselinesFolder,'CarbonLayer','baseline2050_countrygridmix.csv'))
+
+
+# In[17]:
+
+
+#add in the 1995 to 2000 and present to 2100, ffill and bfill
+indx_temp = pd.Series(range(1995,2101,1))
+gridmix_bycountry_1995to2100 = gridmix_bycountry_2000topresent.reindex(indx_temp, method='nearest') #still leaving NaN if 2023 value NaN
+gridmix_bycountry_1995to2100_full = gridmix_bycountry_1995to2100.fillna(method='ffill') #fix nan values throughout
+gridmix_bycountry_1995to2100_full
+
+
+# In[18]:
+
+
+gridmix_bycountry_1995to2100_full.to_csv(os.path.join(baselinesFolder,'CarbonLayer','baseline2100_countrygridmix.csv'))
 
 
 # In[ ]:

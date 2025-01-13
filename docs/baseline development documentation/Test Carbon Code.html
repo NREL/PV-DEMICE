@@ -14717,7 +14717,7 @@ Baseline folder directed to default:  C:\Users\hmirletz\Documents\GitHub\PV_ICE\
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14727,8 +14727,632 @@ Baseline folder directed to default:  C:\Users\hmirletz\Documents\GitHub\PV_ICE\
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#sim1.modifyScenario('test1', 'mod_EOL_collection_eff', 100.0, start_year=2022) #100% collection</span>
 <span class="c1">#sim1.scenario['test1'].modifyMaterials('glass', 'mat_MFG_scrap_Recycled', 100.0, start_year=2022)</span>
-<span class="c1">#sim1.trim_Years(startYear=2000, endYear=2100)</span>
+<span class="n">sim1</span><span class="o">.</span><span class="n">trim_Years</span><span class="p">(</span><span class="n">startYear</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">endYear</span><span class="o">=</span><span class="mi">2100</span><span class="p">)</span>
 <span class="c1">#sim1.modifyScenario(scenarios=None,stage='new_Installed_Capacity_[MW]', value= global_projection['World_annual_[MWdc]'], start_year=2000)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Trimming and extending  PV_ICE
+PV_ICE aluminium_frames : Data trimmed for Energy, years now encompass  2000  to  2100
+PV_ICE aluminium_frames : Data trimmed for Mass, years now encompass  2000  to  2100
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="s1">'PV_ICE'</span><span class="p">]</span><span class="o">.</span><span class="n">dataIn_m</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>new_Installed_Capacity_[MW]</th>
+      <th>mod_eff</th>
+      <th>mod_reliability_t50</th>
+      <th>mod_reliability_t90</th>
+      <th>mod_degradation</th>
+      <th>mod_lifetime</th>
+      <th>mod_MFG_eff</th>
+      <th>mod_Repair</th>
+      <th>mod_MerchantTail</th>
+      <th>...</th>
+      <th>mod_EOL_pg1_landfill</th>
+      <th>mod_EOL_pg2_stored</th>
+      <th>mod_EOL_pg3_reMFG</th>
+      <th>mod_EOL_pg4_recycled</th>
+      <th>mod_EOL_reMFG_yield</th>
+      <th>mod_EOL_sp_reMFG_recycle</th>
+      <th>mod_EOL_pb1_landfill</th>
+      <th>mod_EOL_pb2_stored</th>
+      <th>mod_EOL_pb3_reMFG</th>
+      <th>mod_EOL_pb4_recycled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>2098</td>
+      <td>152662.6502</td>
+      <td>25.07478</td>
+      <td>40</td>
+      <td>44</td>
+      <td>0.5</td>
+      <td>35.0</td>
+      <td>98</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+      <td>0</td>
+      <td>100</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>2099</td>
+      <td>152662.6502</td>
+      <td>25.07478</td>
+      <td>40</td>
+      <td>44</td>
+      <td>0.5</td>
+      <td>35.0</td>
+      <td>98</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+      <td>0</td>
+      <td>100</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>2100</td>
+      <td>152662.6502</td>
+      <td>25.07478</td>
+      <td>40</td>
+      <td>44</td>
+      <td>0.5</td>
+      <td>35.0</td>
+      <td>98</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+      <td>0</td>
+      <td>100</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 22 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="s1">'PV_ICE'</span><span class="p">]</span><span class="o">.</span><span class="n">dataIn_e</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>e_mod_MFG</th>
+      <th>e_mod_Install</th>
+      <th>e_mod_OandM</th>
+      <th>e_mod_Repair</th>
+      <th>e_mod_Demount</th>
+      <th>e_mod_Resell_Certify</th>
+      <th>e_mod_Store</th>
+      <th>e_mod_ReMFG_Disassembly</th>
+      <th>e_mod_Recycle_Crush</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>2098</td>
+      <td>3320.0</td>
+      <td>9.5</td>
+      <td>0</td>
+      <td>48</td>
+      <td>9.5</td>
+      <td>0.2</td>
+      <td>0</td>
+      <td>1.1</td>
+      <td>670</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>2099</td>
+      <td>3320.0</td>
+      <td>9.5</td>
+      <td>0</td>
+      <td>48</td>
+      <td>9.5</td>
+      <td>0.2</td>
+      <td>0</td>
+      <td>1.1</td>
+      <td>670</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>2100</td>
+      <td>3320.0</td>
+      <td>9.5</td>
+      <td>0</td>
+      <td>48</td>
+      <td>9.5</td>
+      <td>0.2</td>
+      <td>0</td>
+      <td>1.1</td>
+      <td>670</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="s1">'PV_ICE'</span><span class="p">]</span><span class="o">.</span><span class="n">material</span><span class="p">[</span><span class="s1">'aluminium_frames'</span><span class="p">]</span><span class="o">.</span><span class="n">matdataIn_m</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>mat_virgin_eff</th>
+      <th>mat_massperm2</th>
+      <th>mat_MFG_eff</th>
+      <th>mat_MFG_scrap_Recycled</th>
+      <th>mat_MFG_scrap_Recycling_eff</th>
+      <th>mat_MFG_scrap_Recycled_into_HQ</th>
+      <th>mat_MFG_scrap_Recycled_into_HQ_Reused4MFG</th>
+      <th>mat_PG3_ReMFG_target</th>
+      <th>mat_ReMFG_yield</th>
+      <th>...</th>
+      <th>mat_EOL_RecycledHQ_Reused4MFG</th>
+      <th>e_mod_MFG</th>
+      <th>e_mod_Install</th>
+      <th>e_mod_OandM</th>
+      <th>e_mod_Repair</th>
+      <th>e_mod_Demount</th>
+      <th>e_mod_Resell_Certify</th>
+      <th>e_mod_Store</th>
+      <th>e_mod_ReMFG_Disassembly</th>
+      <th>e_mod_Recycle_Crush</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>2098</td>
+      <td>18.6</td>
+      <td>1143.529412</td>
+      <td>99.0</td>
+      <td>100.0</td>
+      <td>60.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>2099</td>
+      <td>18.6</td>
+      <td>1143.529412</td>
+      <td>99.0</td>
+      <td>100.0</td>
+      <td>60.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>2100</td>
+      <td>18.6</td>
+      <td>1143.529412</td>
+      <td>99.0</td>
+      <td>100.0</td>
+      <td>60.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>100.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 23 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="s1">'PV_ICE'</span><span class="p">]</span><span class="o">.</span><span class="n">material</span><span class="p">[</span><span class="s1">'aluminium_frames'</span><span class="p">]</span><span class="o">.</span><span class="n">matdataIn_e</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>e_mat_extraction</th>
+      <th>e_mat_MFG</th>
+      <th>e_mat_MFG_fuelfraction</th>
+      <th>e_mat_MFGScrap_LQ</th>
+      <th>e_mat_MFGScrap_HQ</th>
+      <th>e_mat_Landfill</th>
+      <th>e_mat_Landfill_fuelfraction</th>
+      <th>e_mat_EoL_ReMFG_clean</th>
+      <th>e_mat_Recycled_LQ</th>
+      <th>...</th>
+      <th>e_mat_Recycled_HQ_fuelfraction</th>
+      <th>e_mod_MFG</th>
+      <th>e_mod_Install</th>
+      <th>e_mod_OandM</th>
+      <th>e_mod_Repair</th>
+      <th>e_mod_Demount</th>
+      <th>e_mod_Resell_Certify</th>
+      <th>e_mod_Store</th>
+      <th>e_mod_ReMFG_Disassembly</th>
+      <th>e_mod_Recycle_Crush</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>2098</td>
+      <td>2.24</td>
+      <td>22.39</td>
+      <td>35.74</td>
+      <td>2.5</td>
+      <td>0.0</td>
+      <td>0.09</td>
+      <td>0.0</td>
+      <td>0.01</td>
+      <td>2.5</td>
+      <td>...</td>
+      <td>80.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>2099</td>
+      <td>2.24</td>
+      <td>22.39</td>
+      <td>35.74</td>
+      <td>2.5</td>
+      <td>0.0</td>
+      <td>0.09</td>
+      <td>0.0</td>
+      <td>0.01</td>
+      <td>2.5</td>
+      <td>...</td>
+      <td>80.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>2100</td>
+      <td>2.24</td>
+      <td>22.39</td>
+      <td>35.74</td>
+      <td>2.5</td>
+      <td>0.0</td>
+      <td>0.09</td>
+      <td>0.0</td>
+      <td>0.01</td>
+      <td>2.5</td>
+      <td>...</td>
+      <td>80.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 21 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
@@ -14741,7 +15365,7 @@ Baseline folder directed to default:  C:\Users\hmirletz\Documents\GitHub\PV_ICE\
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">calculateFlows</span><span class="p">()</span>
@@ -14792,7 +15416,7 @@ Working on Scenario:  PV_ICE
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">calculateCarbonFlows</span><span class="p">()</span>
@@ -14838,7 +15462,7 @@ Working on Carbon for Module
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="s1">'PV_ICE'</span><span class="p">]</span><span class="o">.</span><span class="n">dataOut_c</span>
@@ -14859,7 +15483,7 @@ Working on Carbon for Module
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
@@ -14908,20 +15532,20 @@ Working on Carbon for Module
   <tbody>
     <tr>
       <th>0</th>
-      <td>9.860890e+07</td>
-      <td>5.845135e+07</td>
-      <td>9.980532e+06</td>
-      <td>2.813661e+07</td>
+      <td>1.627071e+08</td>
+      <td>9.644618e+07</td>
+      <td>1.646813e+07</td>
+      <td>4.642611e+07</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>8.802909e+06</td>
+      <td>1.452502e+07</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>...</td>
       <td>0.0</td>
-      <td>2.043325e+08</td>
-      <td>218852.041500</td>
+      <td>3.371536e+08</td>
+      <td>3.412700e+05</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.000000</td>
@@ -14932,99 +15556,99 @@ Working on Carbon for Module
     </tr>
     <tr>
       <th>1</th>
-      <td>7.593725e+07</td>
-      <td>4.501252e+07</td>
-      <td>7.685859e+06</td>
-      <td>2.166759e+07</td>
+      <td>2.170660e+08</td>
+      <td>1.286679e+08</td>
+      <td>2.196997e+07</td>
+      <td>6.193663e+07</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>6.778990e+06</td>
+      <td>1.937769e+07</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>...</td>
       <td>0.0</td>
-      <td>1.573534e+08</td>
-      <td>166597.526505</td>
+      <td>4.497935e+08</td>
+      <td>4.503364e+05</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.732777</td>
+      <td>0.002180</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>3.100802</td>
+      <td>0.009227</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>9.104694e+07</td>
-      <td>5.396893e+07</td>
-      <td>9.215161e+06</td>
-      <td>2.597892e+07</td>
+      <td>3.300804e+08</td>
+      <td>1.956583e+08</td>
+      <td>3.340853e+07</td>
+      <td>9.418364e+07</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>8.127846e+06</td>
+      <td>2.946659e+07</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>...</td>
       <td>0.0</td>
-      <td>1.886629e+08</td>
-      <td>197476.585894</td>
+      <td>6.839762e+08</td>
+      <td>6.774383e+05</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>15.454992</td>
+      <td>0.170577</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>65.399018</td>
+      <td>0.721810</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>9.205484e+07</td>
-      <td>5.456637e+07</td>
-      <td>9.317174e+06</td>
-      <td>2.626651e+07</td>
+      <td>4.651270e+08</td>
+      <td>2.757084e+08</td>
+      <td>4.707704e+07</td>
+      <td>1.327172e+08</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>8.217823e+06</td>
+      <td>4.152233e+07</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>...</td>
       <td>0.0</td>
-      <td>1.907515e+08</td>
-      <td>197419.287972</td>
+      <td>9.638130e+08</td>
+      <td>9.444449e+05</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>89.315891</td>
+      <td>2.226726</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>377.947246</td>
+      <td>9.422568</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.316027e+08</td>
-      <td>7.800871e+07</td>
-      <td>1.331994e+07</td>
-      <td>3.755090e+07</td>
+      <td>7.389872e+08</td>
+      <td>4.380416e+08</td>
+      <td>7.479533e+07</td>
+      <td>2.108592e+08</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>1.174829e+07</td>
+      <td>6.597008e+07</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>...</td>
       <td>0.0</td>
-      <td>2.727005e+08</td>
-      <td>279096.961539</td>
+      <td>1.531292e+09</td>
+      <td>1.484726e+06</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>299.003425</td>
+      <td>14.043901</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>1265.256598</td>
+      <td>59.427877</td>
     </tr>
     <tr>
       <th>...</th>
@@ -15051,7 +15675,7 @@ Working on Carbon for Module
       <td>...</td>
     </tr>
     <tr>
-      <th>96</th>
+      <th>101</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15075,7 +15699,7 @@ Working on Carbon for Module
       <td>NaN</td>
     </tr>
     <tr>
-      <th>97</th>
+      <th>102</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15099,7 +15723,7 @@ Working on Carbon for Module
       <td>NaN</td>
     </tr>
     <tr>
-      <th>98</th>
+      <th>103</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15123,7 +15747,7 @@ Working on Carbon for Module
       <td>NaN</td>
     </tr>
     <tr>
-      <th>99</th>
+      <th>104</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15147,7 +15771,7 @@ Working on Carbon for Module
       <td>NaN</td>
     </tr>
     <tr>
-      <th>100</th>
+      <th>105</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15172,7 +15796,7 @@ Working on Carbon for Module
     </tr>
   </tbody>
 </table>
-<p>101 rows × 29 columns</p>
+<p>106 rows × 29 columns</p>
 </div>
 </div>
 
@@ -15187,7 +15811,7 @@ Working on Carbon for Module
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sim1</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="s1">'PV_ICE'</span><span class="p">]</span><span class="o">.</span><span class="n">material</span><span class="p">[</span><span class="s1">'aluminium_frames'</span><span class="p">]</span><span class="o">.</span><span class="n">matdataOut_c</span>
@@ -15208,7 +15832,7 @@ Working on Carbon for Module
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -15257,23 +15881,23 @@ Working on Carbon for Module
   <tbody>
     <tr>
       <th>0</th>
-      <td>4.668826e+08</td>
-      <td>1.242616e+08</td>
+      <td>6.112500e+08</td>
+      <td>1.626852e+08</td>
       <td>0.0</td>
-      <td>7.819747e+07</td>
-      <td>3.229180e+08</td>
-      <td>6.512672e+07</td>
-      <td>4.708136e+08</td>
-      <td>2.333758e+08</td>
-      <td>2.408576e+07</td>
-      <td>3.956221e+08</td>
+      <td>1.023774e+08</td>
+      <td>4.227693e+08</td>
+      <td>8.526493e+07</td>
+      <td>6.163965e+08</td>
+      <td>3.055393e+08</td>
+      <td>3.153346e+07</td>
+      <td>5.179547e+08</td>
       <td>...</td>
       <td>0.000000</td>
-      <td>78742.562959</td>
+      <td>96682.055025</td>
       <td>0.0</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>2.021440e+09</td>
+      <td>2.481974e+09</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15281,23 +15905,23 @@ Working on Carbon for Module
     </tr>
     <tr>
       <th>1</th>
-      <td>4.001585e+08</td>
-      <td>9.744517e+07</td>
+      <td>9.164811e+08</td>
+      <td>2.231782e+08</td>
       <td>0.0</td>
-      <td>4.716008e+07</td>
-      <td>2.431405e+08</td>
-      <td>5.879685e+07</td>
-      <td>2.659335e+08</td>
-      <td>2.568214e+08</td>
-      <td>1.847117e+07</td>
-      <td>3.820672e+08</td>
+      <td>1.080105e+08</td>
+      <td>5.568635e+08</td>
+      <td>1.346621e+08</td>
+      <td>6.090662e+08</td>
+      <td>5.881967e+08</td>
+      <td>4.230443e+07</td>
+      <td>8.750467e+08</td>
       <td>...</td>
-      <td>9.929233</td>
-      <td>58531.943475</td>
+      <td>0.023264</td>
+      <td>125147.047065</td>
       <td>0.0</td>
-      <td>35.765495</td>
-      <td>2.523613</td>
-      <td>1.502066e+09</td>
+      <td>0.083796</td>
+      <td>0.005913</td>
+      <td>3.212712e+09</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15305,23 +15929,23 @@ Working on Carbon for Module
     </tr>
     <tr>
       <th>2</th>
-      <td>5.356985e+08</td>
-      <td>9.391487e+07</td>
+      <td>1.716762e+09</td>
+      <td>3.009705e+08</td>
       <td>0.0</td>
-      <td>3.531638e+07</td>
-      <td>2.364479e+08</td>
-      <td>8.849545e+07</td>
-      <td>2.474126e+08</td>
-      <td>2.505269e+08</td>
-      <td>1.876389e+07</td>
-      <td>3.826822e+08</td>
+      <td>1.131790e+08</td>
+      <td>7.577486e+08</td>
+      <td>2.836028e+08</td>
+      <td>7.928872e+08</td>
+      <td>8.028678e+08</td>
+      <td>6.013293e+07</td>
+      <td>1.226388e+09</td>
       <td>...</td>
-      <td>209.237117</td>
-      <td>62501.025890</td>
+      <td>1.819338</td>
+      <td>184899.033809</td>
       <td>0.0</td>
-      <td>753.680458</td>
-      <td>53.179693</td>
-      <td>1.593175e+09</td>
+      <td>6.553329</td>
+      <td>0.462403</td>
+      <td>4.746538e+09</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15329,23 +15953,23 @@ Working on Carbon for Module
     </tr>
     <tr>
       <th>3</th>
-      <td>5.819207e+08</td>
-      <td>9.345902e+07</td>
+      <td>2.742869e+09</td>
+      <td>4.405169e+08</td>
       <td>0.0</td>
-      <td>9.392795e+07</td>
-      <td>2.092273e+08</td>
-      <td>5.215190e+07</td>
-      <td>2.624507e+08</td>
-      <td>1.937336e+08</td>
-      <td>1.753481e+07</td>
-      <td>2.883874e+08</td>
+      <td>4.427272e+08</td>
+      <td>9.861881e+08</td>
+      <td>2.458167e+08</td>
+      <td>1.237055e+09</td>
+      <td>9.131585e+08</td>
+      <td>8.264992e+07</td>
+      <td>1.359307e+09</td>
       <td>...</td>
-      <td>1206.574753</td>
-      <td>60916.159523</td>
+      <td>23.710720</td>
+      <td>254852.479731</td>
       <td>0.0</td>
-      <td>4346.130489</td>
-      <td>306.662967</td>
-      <td>1.498533e+09</td>
+      <td>85.406963</td>
+      <td>6.026315</td>
+      <td>6.541164e+09</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15353,23 +15977,23 @@ Working on Carbon for Module
     </tr>
     <tr>
       <th>4</th>
-      <td>9.576453e+08</td>
-      <td>1.177023e+08</td>
+      <td>4.801981e+09</td>
+      <td>5.902020e+08</td>
       <td>0.0</td>
-      <td>9.547009e+07</td>
-      <td>2.998626e+08</td>
-      <td>1.252403e+08</td>
-      <td>2.631935e+08</td>
-      <td>3.681731e+08</td>
-      <td>2.455403e+07</td>
-      <td>4.641717e+08</td>
+      <td>4.787217e+08</td>
+      <td>1.503620e+09</td>
+      <td>6.280002e+08</td>
+      <td>1.319748e+09</td>
+      <td>1.846154e+09</td>
+      <td>1.231228e+08</td>
+      <td>2.327525e+09</td>
       <td>...</td>
-      <td>4032.178686</td>
-      <td>89211.420248</td>
+      <td>149.167108</td>
+      <td>390187.037053</td>
       <td>0.0</td>
-      <td>14524.068802</td>
-      <td>1024.818295</td>
-      <td>2.072048e+09</td>
+      <td>537.305885</td>
+      <td>37.912303</td>
+      <td>1.000862e+10</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15400,7 +16024,7 @@ Working on Carbon for Module
       <td>...</td>
     </tr>
     <tr>
-      <th>96</th>
+      <th>101</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15424,7 +16048,7 @@ Working on Carbon for Module
       <td>NaN</td>
     </tr>
     <tr>
-      <th>97</th>
+      <th>102</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15448,7 +16072,7 @@ Working on Carbon for Module
       <td>NaN</td>
     </tr>
     <tr>
-      <th>98</th>
+      <th>103</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15472,7 +16096,7 @@ Working on Carbon for Module
       <td>NaN</td>
     </tr>
     <tr>
-      <th>99</th>
+      <th>104</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15496,7 +16120,7 @@ Working on Carbon for Module
       <td>NaN</td>
     </tr>
     <tr>
-      <th>100</th>
+      <th>105</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -15521,7 +16145,7 @@ Working on Carbon for Module
     </tr>
   </tbody>
 </table>
-<p>101 rows × 25 columns</p>
+<p>106 rows × 25 columns</p>
 </div>
 </div>
 
