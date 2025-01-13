@@ -14649,23 +14649,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14673,10 +14657,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gridemissionfactors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span><span class="s1">'baseline_electricityemissionfactors.csv'</span><span class="p">))</span>
-<span class="n">materialprocesscarbon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span><span class="s1">'baseline_materials_processCO2.csv'</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">'Material'</span><span class="p">)</span>
-<span class="n">countrygridmixes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span> <span class="s1">'baseline_countrygridmix.csv'</span><span class="p">))</span>
-<span class="n">countrymodmfg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span> <span class="s1">'baseline_module_countrymarketshare.csv'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
 </pre></div>
 
      </div>
@@ -14684,12 +14665,408 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Area</th>
+      <th>Area_for_EOL_pathsG</th>
+      <th>Cumulative_Active_Area</th>
+      <th>EOL_BS_Year0</th>
+      <th>EOL_BS_Year1</th>
+      <th>EOL_BS_Year10</th>
+      <th>EOL_BS_Year100</th>
+      <th>EOL_BS_Year11</th>
+      <th>EOL_BS_Year12</th>
+      <th>EOL_BS_Year13</th>
+      <th>...</th>
+      <th>Status_BAD_[W]</th>
+      <th>WeibullParams</th>
+      <th>Yearly_Sum_Area_disposed</th>
+      <th>Yearly_Sum_Area_disposedby_Failure</th>
+      <th>Yearly_Sum_Area_disposedby_ProjectLifetime</th>
+      <th>Yearly_Sum_Power_disposed</th>
+      <th>Yearly_Sum_Power_disposedby_Failure</th>
+      <th>Yearly_Sum_Power_disposedby_ProjectLifetime</th>
+      <th>irradiance_stc</th>
+      <th>landfilled_noncollected</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.025849e+06</td>
+      <td>0.000000e+00</td>
+      <td>6.025849e+06</td>
+      <td>0.0</td>
+      <td>0.005775</td>
+      <td>5324.865726</td>
+      <td>0.000000e+00</td>
+      <td>8946.990075</td>
+      <td>14259.385581</td>
+      <td>21674.961938</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>{'alpha': 6.283760582394805, 'beta': 20.141170...</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.090566e+06</td>
+      <td>0.000000e+00</td>
+      <td>8.116416e+06</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>1033.841770</td>
+      <td>0.000000e+00</td>
+      <td>1847.371764</td>
+      <td>3104.006315</td>
+      <td>4947.051748</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>{'alpha': 6.283760582394805, 'beta': 20.141170...</td>
+      <td>3.850014e-02</td>
+      <td>3.850014e-02</td>
+      <td>0.000000e+00</td>
+      <td>5.127968e+00</td>
+      <td>5.127968e+00</td>
+      <td>0.000000e+00</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.507415e+06</td>
+      <td>0.000000e+00</td>
+      <td>1.062383e+07</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>644.004129</td>
+      <td>0.000000e+00</td>
+      <td>1239.984628</td>
+      <td>2215.728418</td>
+      <td>3722.929589</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>{'alpha': 6.283760582394805, 'beta': 20.141170...</td>
+      <td>2.974452e+00</td>
+      <td>2.974452e+00</td>
+      <td>0.000000e+00</td>
+      <td>3.932435e+02</td>
+      <td>3.932435e+02</td>
+      <td>0.000000e+00</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.813595e+06</td>
+      <td>0.000000e+00</td>
+      <td>1.443739e+07</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>462.963244</td>
+      <td>0.000000e+00</td>
+      <td>979.483312</td>
+      <td>1885.926188</td>
+      <td>3369.961332</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>{'alpha': 6.283760582394805, 'beta': 20.141170...</td>
+      <td>3.637706e+01</td>
+      <td>3.637706e+01</td>
+      <td>0.000000e+00</td>
+      <td>4.775703e+03</td>
+      <td>4.775703e+03</td>
+      <td>0.000000e+00</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.782451e+06</td>
+      <td>0.000000e+00</td>
+      <td>2.221963e+07</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>394.459529</td>
+      <td>0.000000e+00</td>
+      <td>944.774962</td>
+      <td>1998.844016</td>
+      <td>3848.633487</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>{'alpha': 6.283760582394805, 'beta': 20.141170...</td>
+      <td>2.088794e+02</td>
+      <td>2.088794e+02</td>
+      <td>0.000000e+00</td>
+      <td>2.724000e+04</td>
+      <td>2.724000e+04</td>
+      <td>0.000000e+00</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>8.772224e+08</td>
+      <td>1.156667e+08</td>
+      <td>3.047118e+10</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.249738e-05</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>9.437939e+10</td>
+      <td>{'alpha': 12.596192434998898, 'beta': 41.18098...</td>
+      <td>8.772224e+08</td>
+      <td>1.061113e+08</td>
+      <td>7.711111e+08</td>
+      <td>3.712108e+13</td>
+      <td>2.250720e+10</td>
+      <td>3.709858e+13</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>8.772224e+08</td>
+      <td>1.156667e+08</td>
+      <td>3.047118e+10</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>6.135649e-07</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>9.437939e+10</td>
+      <td>{'alpha': 12.596192434998898, 'beta': 41.18098...</td>
+      <td>8.772224e+08</td>
+      <td>1.061113e+08</td>
+      <td>7.711111e+08</td>
+      <td>3.728285e+13</td>
+      <td>2.250720e+10</td>
+      <td>3.726034e+13</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>8.772224e+08</td>
+      <td>1.156667e+08</td>
+      <td>3.047118e+10</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>9.437939e+10</td>
+      <td>{'alpha': 12.596192434998898, 'beta': 41.18098...</td>
+      <td>8.772224e+08</td>
+      <td>1.061113e+08</td>
+      <td>7.711111e+08</td>
+      <td>3.744462e+13</td>
+      <td>2.250720e+10</td>
+      <td>3.742211e+13</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>8.772224e+08</td>
+      <td>1.156667e+08</td>
+      <td>3.047118e+10</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>9.437939e+10</td>
+      <td>{'alpha': 12.596192434998898, 'beta': 41.18098...</td>
+      <td>8.772224e+08</td>
+      <td>1.061113e+08</td>
+      <td>7.711111e+08</td>
+      <td>3.760639e+13</td>
+      <td>2.250720e+10</td>
+      <td>3.758388e+13</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>8.772224e+08</td>
+      <td>1.156667e+08</td>
+      <td>3.047118e+10</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>9.437939e+10</td>
+      <td>{'alpha': 12.596192434998898, 'beta': 41.18098...</td>
+      <td>8.772224e+08</td>
+      <td>1.061113e+08</td>
+      <td>7.711111e+08</td>
+      <td>3.776816e+13</td>
+      <td>2.250720e+10</td>
+      <td>3.774565e+13</td>
+      <td>1000.0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 344 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gridemissionfactors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span><span class="s1">'baseline_electricityemissionfactors.csv'</span><span class="p">))</span>
+<span class="n">materialprocesscarbon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span><span class="s1">'baseline_materials_processCO2.csv'</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">'Material'</span><span class="p">)</span>
+<span class="n">countrygridmixes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span> <span class="s1">'baseline2100_countrygridmix.csv'</span><span class="p">))</span> <span class="c1">#2000 to 2050 or 2100</span>
+<span class="n">countrymodmfg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span> <span class="s1">'baseline2100_module_countrymarketshare.csv'</span><span class="p">))</span> <span class="c1">#currently 2000 to 2100 or 2050</span>
+
+<span class="c1">#baseline_module_countrymarketshare = 1995 to 2050</span>
+<span class="c1">#</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">countrymodmfg</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>101</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#carbon intensity of country grid mixes</span>
@@ -14725,7 +15102,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fuelemitfactor</span>
@@ -14746,7 +15123,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
 
@@ -14761,12 +15138,361 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">country_carbonpkwh</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Afghanistan</th>
+      <th>Africa</th>
+      <th>Albania</th>
+      <th>Algeria</th>
+      <th>American Samoa</th>
+      <th>Angola</th>
+      <th>Antigua and Barbuda</th>
+      <th>Argentina</th>
+      <th>Armenia</th>
+      <th>Aruba</th>
+      <th>...</th>
+      <th>Vanuatu</th>
+      <th>Venezuela</th>
+      <th>Viet Nam</th>
+      <th>Virgin Islands (British)</th>
+      <th>Virgin Islands (U.S.)</th>
+      <th>Western Sahara</th>
+      <th>World</th>
+      <th>Yemen</th>
+      <th>Zambia</th>
+      <th>Zimbabwe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.094607</td>
+      <td>0.244897</td>
+      <td>0.010177</td>
+      <td>0.229793</td>
+      <td>0.267100</td>
+      <td>0.098320</td>
+      <td>0.267100</td>
+      <td>0.143569</td>
+      <td>0.106623</td>
+      <td>0.267100</td>
+      <td>...</td>
+      <td>0.267100</td>
+      <td>0.063635</td>
+      <td>0.124156</td>
+      <td>0.2671</td>
+      <td>0.267100</td>
+      <td>0.2671</td>
+      <td>0.199946</td>
+      <td>0.267100</td>
+      <td>0.001495</td>
+      <td>0.188737</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.078292</td>
+      <td>0.243972</td>
+      <td>0.012313</td>
+      <td>0.229580</td>
+      <td>0.267100</td>
+      <td>0.100964</td>
+      <td>0.267100</td>
+      <td>0.120766</td>
+      <td>0.111366</td>
+      <td>0.267100</td>
+      <td>...</td>
+      <td>0.267100</td>
+      <td>0.079657</td>
+      <td>0.111299</td>
+      <td>0.2671</td>
+      <td>0.267100</td>
+      <td>0.2671</td>
+      <td>0.200609</td>
+      <td>0.267100</td>
+      <td>0.001789</td>
+      <td>0.217732</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.061006</td>
+      <td>0.242510</td>
+      <td>0.016560</td>
+      <td>0.229421</td>
+      <td>0.267100</td>
+      <td>0.094099</td>
+      <td>0.267100</td>
+      <td>0.118258</td>
+      <td>0.068180</td>
+      <td>0.267100</td>
+      <td>...</td>
+      <td>0.267100</td>
+      <td>0.086119</td>
+      <td>0.133586</td>
+      <td>0.2671</td>
+      <td>0.267100</td>
+      <td>0.2671</td>
+      <td>0.201984</td>
+      <td>0.267100</td>
+      <td>0.002181</td>
+      <td>0.193779</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.090257</td>
+      <td>0.245746</td>
+      <td>0.005609</td>
+      <td>0.227969</td>
+      <td>0.267100</td>
+      <td>0.100670</td>
+      <td>0.267100</td>
+      <td>0.128298</td>
+      <td>0.065706</td>
+      <td>0.267100</td>
+      <td>...</td>
+      <td>0.267100</td>
+      <td>0.084611</td>
+      <td>0.146448</td>
+      <td>0.2671</td>
+      <td>0.267100</td>
+      <td>0.2671</td>
+      <td>0.206731</td>
+      <td>0.267100</td>
+      <td>0.002119</td>
+      <td>0.136775</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.083946</td>
+      <td>0.244612</td>
+      <td>0.006731</td>
+      <td>0.228107</td>
+      <td>0.267100</td>
+      <td>0.058441</td>
+      <td>0.267100</td>
+      <td>0.145562</td>
+      <td>0.063713</td>
+      <td>0.267100</td>
+      <td>...</td>
+      <td>0.267100</td>
+      <td>0.070975</td>
+      <td>0.160681</td>
+      <td>0.2671</td>
+      <td>0.267100</td>
+      <td>0.2671</td>
+      <td>0.204898</td>
+      <td>0.267100</td>
+      <td>0.001674</td>
+      <td>0.151234</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>0.044774</td>
+      <td>0.206328</td>
+      <td>0.000000</td>
+      <td>0.227499</td>
+      <td>0.252249</td>
+      <td>0.063850</td>
+      <td>0.252249</td>
+      <td>0.145681</td>
+      <td>0.099521</td>
+      <td>0.226207</td>
+      <td>...</td>
+      <td>0.228931</td>
+      <td>0.053616</td>
+      <td>0.187834</td>
+      <td>0.2671</td>
+      <td>0.259247</td>
+      <td>0.2671</td>
+      <td>0.189402</td>
+      <td>0.205841</td>
+      <td>0.039903</td>
+      <td>0.117391</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>0.044774</td>
+      <td>0.206328</td>
+      <td>0.000000</td>
+      <td>0.227499</td>
+      <td>0.252249</td>
+      <td>0.063850</td>
+      <td>0.252249</td>
+      <td>0.145681</td>
+      <td>0.099521</td>
+      <td>0.226207</td>
+      <td>...</td>
+      <td>0.228931</td>
+      <td>0.053616</td>
+      <td>0.187834</td>
+      <td>0.2671</td>
+      <td>0.259247</td>
+      <td>0.2671</td>
+      <td>0.189402</td>
+      <td>0.205841</td>
+      <td>0.039903</td>
+      <td>0.117391</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>0.044774</td>
+      <td>0.206328</td>
+      <td>0.000000</td>
+      <td>0.227499</td>
+      <td>0.252249</td>
+      <td>0.063850</td>
+      <td>0.252249</td>
+      <td>0.145681</td>
+      <td>0.099521</td>
+      <td>0.226207</td>
+      <td>...</td>
+      <td>0.228931</td>
+      <td>0.053616</td>
+      <td>0.187834</td>
+      <td>0.2671</td>
+      <td>0.259247</td>
+      <td>0.2671</td>
+      <td>0.189402</td>
+      <td>0.205841</td>
+      <td>0.039903</td>
+      <td>0.117391</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>0.044774</td>
+      <td>0.206328</td>
+      <td>0.000000</td>
+      <td>0.227499</td>
+      <td>0.252249</td>
+      <td>0.063850</td>
+      <td>0.252249</td>
+      <td>0.145681</td>
+      <td>0.099521</td>
+      <td>0.226207</td>
+      <td>...</td>
+      <td>0.228931</td>
+      <td>0.053616</td>
+      <td>0.187834</td>
+      <td>0.2671</td>
+      <td>0.259247</td>
+      <td>0.2671</td>
+      <td>0.189402</td>
+      <td>0.205841</td>
+      <td>0.039903</td>
+      <td>0.117391</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>0.044774</td>
+      <td>0.206328</td>
+      <td>0.000000</td>
+      <td>0.227499</td>
+      <td>0.252249</td>
+      <td>0.063850</td>
+      <td>0.252249</td>
+      <td>0.145681</td>
+      <td>0.099521</td>
+      <td>0.226207</td>
+      <td>...</td>
+      <td>0.228931</td>
+      <td>0.053616</td>
+      <td>0.187834</td>
+      <td>0.2671</td>
+      <td>0.259247</td>
+      <td>0.2671</td>
+      <td>0.189402</td>
+      <td>0.205841</td>
+      <td>0.039903</td>
+      <td>0.117391</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 228 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#carbon intensity of module manufacturing weighted by country</span>
@@ -14795,7 +15521,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">de</span>
@@ -14816,7 +15542,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
 
@@ -15007,12 +15733,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">modmfg_co2eqpkwh_bycountry</span>
@@ -15023,12 +15749,345 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>China</th>
+      <th>India</th>
+      <th>Taiwan</th>
+      <th>Germany</th>
+      <th>Japan</th>
+      <th>South Korea</th>
+      <th>Canada</th>
+      <th>Mexico</th>
+      <th>USA</th>
+      <th>Viet Nam</th>
+      <th>...</th>
+      <th>Thailand</th>
+      <th>Singapore</th>
+      <th>Turkey</th>
+      <th>Poland</th>
+      <th>Switzerland</th>
+      <th>Brazil</th>
+      <th>South Africa</th>
+      <th>Philippines</th>
+      <th>El Salvador</th>
+      <th>Global_kgCO2eqpkWh</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.112368</td>
+      <td>0.066607</td>
+      <td>0.011373</td>
+      <td>0.032063</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.010031</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000401</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.232844</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.109323</td>
+      <td>0.067319</td>
+      <td>0.011706</td>
+      <td>0.031808</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.010459</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000380</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.230995</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.110787</td>
+      <td>0.068031</td>
+      <td>0.011736</td>
+      <td>0.032036</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.010033</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000422</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.233046</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.113361</td>
+      <td>0.068196</td>
+      <td>0.011970</td>
+      <td>0.032449</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.010302</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000433</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.236711</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.111586</td>
+      <td>0.065026</td>
+      <td>0.011934</td>
+      <td>0.031673</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.009599</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000445</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.230263</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.220250</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.220250</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.220250</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.220250</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.220250</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 21 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#carbon impacts module mfging wtd by country</span>
@@ -15047,7 +16106,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#carbon impacts other module level steps</span>
@@ -15068,12 +16127,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dc</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -15082,6 +16141,195 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>China_mod_MFG_kgCO2eq</th>
+      <th>India_mod_MFG_kgCO2eq</th>
+      <th>Taiwan_mod_MFG_kgCO2eq</th>
+      <th>Germany_mod_MFG_kgCO2eq</th>
+      <th>Japan_mod_MFG_kgCO2eq</th>
+      <th>South Korea_mod_MFG_kgCO2eq</th>
+      <th>Canada_mod_MFG_kgCO2eq</th>
+      <th>Mexico_mod_MFG_kgCO2eq</th>
+      <th>USA_mod_MFG_kgCO2eq</th>
+      <th>Viet Nam_mod_MFG_kgCO2eq</th>
+      <th>...</th>
+      <th>El Salvador_mod_MFG_kgCO2eq</th>
+      <th>Global_mod_MFG_kgCO2eq</th>
+      <th>mod_Install_kgCO2eq</th>
+      <th>mod_OandM_kgCO2eq</th>
+      <th>mod_Repair_kgCO2eq</th>
+      <th>mod_Demount_kgCO2eq</th>
+      <th>mod_Store_kgCO2eq</th>
+      <th>mod_Resell_Certify_kgCO2eq</th>
+      <th>mod_ReMFG_Disassembly_kgCO2eq</th>
+      <th>mod_Recycle_Crush_kgCO2eq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>96</th>
+      <td>5.432283e+11</td>
+      <td>2.009574e+10</td>
+      <td>6.059484e+09</td>
+      <td>2.753485e+09</td>
+      <td>1.912337e+09</td>
+      <td>1.119232e+10</td>
+      <td>3.843860e+08</td>
+      <td>1.634926e+09</td>
+      <td>4.181057e+09</td>
+      <td>2.542329e+10</td>
+      <td>...</td>
+      <td>9.404411e+06</td>
+      <td>6.545427e+11</td>
+      <td>1.316990e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.076963e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.462954e+09</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>5.432283e+11</td>
+      <td>2.009574e+10</td>
+      <td>6.059484e+09</td>
+      <td>2.753485e+09</td>
+      <td>1.912337e+09</td>
+      <td>1.119232e+10</td>
+      <td>3.843860e+08</td>
+      <td>1.634926e+09</td>
+      <td>4.181057e+09</td>
+      <td>2.542329e+10</td>
+      <td>...</td>
+      <td>9.404411e+06</td>
+      <td>6.545427e+11</td>
+      <td>1.316990e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.076963e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.462954e+09</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>5.432283e+11</td>
+      <td>2.009574e+10</td>
+      <td>6.059484e+09</td>
+      <td>2.753485e+09</td>
+      <td>1.912337e+09</td>
+      <td>1.119232e+10</td>
+      <td>3.843860e+08</td>
+      <td>1.634926e+09</td>
+      <td>4.181057e+09</td>
+      <td>2.542329e+10</td>
+      <td>...</td>
+      <td>9.404411e+06</td>
+      <td>6.545427e+11</td>
+      <td>1.316990e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.076963e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.462954e+09</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>5.432283e+11</td>
+      <td>2.009574e+10</td>
+      <td>6.059484e+09</td>
+      <td>2.753485e+09</td>
+      <td>1.912337e+09</td>
+      <td>1.119232e+10</td>
+      <td>3.843860e+08</td>
+      <td>1.634926e+09</td>
+      <td>4.181057e+09</td>
+      <td>2.542329e+10</td>
+      <td>...</td>
+      <td>9.404411e+06</td>
+      <td>6.545427e+11</td>
+      <td>1.316990e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.076963e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.462954e+09</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>5.432283e+11</td>
+      <td>2.009574e+10</td>
+      <td>6.059484e+09</td>
+      <td>2.753485e+09</td>
+      <td>1.912337e+09</td>
+      <td>1.119232e+10</td>
+      <td>3.843860e+08</td>
+      <td>1.634926e+09</td>
+      <td>4.181057e+09</td>
+      <td>2.542329e+10</td>
+      <td>...</td>
+      <td>9.404411e+06</td>
+      <td>6.545427e+11</td>
+      <td>1.316990e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.076963e+09</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.462954e+09</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -15100,7 +16348,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">matEnergy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">'matdataIn_e.pkl'</span><span class="p">)</span>
@@ -15122,10 +16370,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countrymatmfg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span> <span class="s1">'baseline_silicon_MFGing_countrymarketshare.csv'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countrymatmfg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carbonfolder</span><span class="p">,</span> <span class="s1">'baseline2100_silicon_MFGing_countrymarketshare.csv'</span><span class="p">))</span> <span class="c1">#2000-2100</span>
+<span class="c1">#baseline_silicon_MFGing_countrymarketshare = 1995 through 2050</span>
 <span class="c1">#countrymatmfg.head()</span>
 <span class="n">mat</span><span class="o">=</span><span class="s1">'silicon'</span>
 </pre></div>
@@ -15140,7 +16389,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#carbon intensity of material manufacturing weighted by country</span>
@@ -15164,12 +16413,361 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matmfg_co2eqpkwh_bycountry</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>China</th>
+      <th>India</th>
+      <th>Taiwan</th>
+      <th>Germany</th>
+      <th>Japan</th>
+      <th>South Korea</th>
+      <th>Canada</th>
+      <th>Mexico</th>
+      <th>USA</th>
+      <th>Viet Nam</th>
+      <th>...</th>
+      <th>Thailand</th>
+      <th>Singapore</th>
+      <th>Turkey</th>
+      <th>Poland</th>
+      <th>Switzerland</th>
+      <th>Brazil</th>
+      <th>South Africa</th>
+      <th>Philippines</th>
+      <th>El Salvador</th>
+      <th>Global_kgCO2eqpkWh</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.112368</td>
+      <td>0.066607</td>
+      <td>0.011373</td>
+      <td>0.032063</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.010031</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000401</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.465688</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.109323</td>
+      <td>0.067319</td>
+      <td>0.011706</td>
+      <td>0.031808</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.010459</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000380</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.461990</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.110787</td>
+      <td>0.068031</td>
+      <td>0.011736</td>
+      <td>0.032036</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.010033</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000422</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.466091</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.113361</td>
+      <td>0.068196</td>
+      <td>0.011970</td>
+      <td>0.032449</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.010302</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000433</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.473422</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.111586</td>
+      <td>0.065026</td>
+      <td>0.011934</td>
+      <td>0.031673</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.009599</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000445</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.460525</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.440500</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.440500</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.440500</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.440500</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>0.182793</td>
+      <td>0.006762</td>
+      <td>0.002039</td>
+      <td>0.000927</td>
+      <td>0.000643</td>
+      <td>0.003766</td>
+      <td>0.000129</td>
+      <td>0.00055</td>
+      <td>0.001407</td>
+      <td>0.008555</td>
+      <td>...</td>
+      <td>0.003191</td>
+      <td>0.000811</td>
+      <td>0.002766</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000098</td>
+      <td>0.000459</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.440500</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 21 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#carbon impacts mat mfging wtd by country</span>
@@ -15179,7 +16777,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="n">dcmat</span> <span class="o">=</span> <span class="n">dcmat</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span><span class="s1">'_vmfg_elec_kgCO2eq'</span><span class="p">)</span>
 
 <span class="c1">#fuel CO2 impacts</span>
-<span class="n">steamHeat</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gridemissionfactors</span><span class="p">[</span><span class="n">gridemissionfactors</span><span class="p">[</span><span class="s1">'Energy Source'</span><span class="p">]</span><span class="o">==</span><span class="s1">'SteamAndHeat'</span><span class="p">][</span><span class="s1">'CO2_kgpkWh_EPA'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">steamHeat</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gridemissionfactors</span><span class="p">[</span><span class="n">gridemissionfactors</span><span class="p">[</span><span class="s1">'Energy Source'</span><span class="p">]</span><span class="o">==</span><span class="s1">'SteamAndHeat'</span><span class="p">][</span><span class="s1">'CO2_gpWh_EPA'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_MFG_virgin_fuel_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">demat</span><span class="p">[</span><span class="s1">'mat_MFG_virgin_fuel'</span><span class="p">]</span><span class="o">*</span><span class="n">steamHeat</span> <span class="c1">#CO2 from mfging fuels</span>
 <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_MFGScrap_HQ_fuel_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">demat</span><span class="p">[</span><span class="s1">'mat_MFGScrap_HQ_fuel'</span><span class="p">]</span><span class="o">*</span><span class="n">steamHeat</span> <span class="c1">#CO2 from recycling fuels</span>
 </pre></div>
@@ -15189,12 +16787,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dcmat</span>
@@ -15205,23 +16803,356 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>China_vmfg_elec_kgCO2eq</th>
+      <th>India_vmfg_elec_kgCO2eq</th>
+      <th>Taiwan_vmfg_elec_kgCO2eq</th>
+      <th>Germany_vmfg_elec_kgCO2eq</th>
+      <th>Japan_vmfg_elec_kgCO2eq</th>
+      <th>South Korea_vmfg_elec_kgCO2eq</th>
+      <th>Canada_vmfg_elec_kgCO2eq</th>
+      <th>Mexico_vmfg_elec_kgCO2eq</th>
+      <th>USA_vmfg_elec_kgCO2eq</th>
+      <th>Viet Nam_vmfg_elec_kgCO2eq</th>
+      <th>...</th>
+      <th>Turkey_vmfg_elec_kgCO2eq</th>
+      <th>Poland_vmfg_elec_kgCO2eq</th>
+      <th>Switzerland_vmfg_elec_kgCO2eq</th>
+      <th>Brazil_vmfg_elec_kgCO2eq</th>
+      <th>South Africa_vmfg_elec_kgCO2eq</th>
+      <th>Philippines_vmfg_elec_kgCO2eq</th>
+      <th>El Salvador_vmfg_elec_kgCO2eq</th>
+      <th>Global_vmfg_elec_kgCO2eq</th>
+      <th>mat_MFG_virgin_fuel_kgCO2eq</th>
+      <th>mat_MFGScrap_HQ_fuel_kgCO2eq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4.728878e+11</td>
+      <td>2.803087e+11</td>
+      <td>4.786253e+10</td>
+      <td>1.349316e+11</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>4.221514e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.688771e+09</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>1.959789e+12</td>
+      <td>2.294188e+09</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.421781e+11</td>
+      <td>8.755023e+10</td>
+      <td>1.522379e+10</td>
+      <td>4.136764e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.360186e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>4.939041e+08</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>6.008311e+11</td>
+      <td>7.385953e+08</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.418067e+11</td>
+      <td>8.707958e+10</td>
+      <td>1.502241e+10</td>
+      <td>4.100611e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.284247e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>5.396851e+08</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>5.965940e+11</td>
+      <td>7.852458e+08</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.760954e+11</td>
+      <td>1.059363e+11</td>
+      <td>1.859398e+10</td>
+      <td>5.040686e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.600275e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>6.733556e+08</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>7.354173e+11</td>
+      <td>1.094600e+09</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.911213e+11</td>
+      <td>1.696503e+11</td>
+      <td>3.113420e+10</td>
+      <td>8.263223e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>2.504335e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>1.161432e+09</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>1.201486e+12</td>
+      <td>1.838380e+09</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>1.946506e+11</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>6.904926e+09</td>
+      <td>3.230697e+10</td>
+      <td>0.0</td>
+      <td>2.226898e+08</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>1.946506e+11</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>6.904926e+09</td>
+      <td>3.230697e+10</td>
+      <td>0.0</td>
+      <td>2.226898e+08</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>1.946506e+11</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>6.904926e+09</td>
+      <td>3.230697e+10</td>
+      <td>0.0</td>
+      <td>2.226898e+08</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>1.946506e+11</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>6.904926e+09</td>
+      <td>3.230697e+10</td>
+      <td>0.0</td>
+      <td>2.226898e+08</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>1.946506e+11</td>
+      <td>0.0</td>
+      <td>0.000000e+00</td>
+      <td>6.904926e+09</td>
+      <td>3.230697e+10</td>
+      <td>0.0</td>
+      <td>2.226898e+08</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 23 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#CO2 process emissions from MFGing (v, lq, hq)</span>
 <span class="c1">#mass of material being processed in each stream * CO2 intensity of that process</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_Virgin_Stock'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'v_MFG_kgCO2eqpkg'</span><span class="p">]</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQmfg_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_MFG_Scrap_Sentto_Recycling'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'LQ_Recycle_kgCO2eqpkg'</span><span class="p">]</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQeol_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_recycled_target'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'LQ_Recycle_kgCO2eqpkg'</span><span class="p">]</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQ_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQmfg_kgCO2eq'</span><span class="p">]</span><span class="o">+</span><span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQeol_kgCO2eq'</span><span class="p">]</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQmfg_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_MFG_Recycled_into_HQ'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'HQ_Recycle_kgCO2eqpkg'</span><span class="p">]</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQeol_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_EOL_Recycled_2_HQ'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'HQ_Recycle_kgCO2eqpkg'</span><span class="p">]</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQ_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQmfg_kgCO2eq'</span><span class="p">]</span><span class="o">+</span><span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQeol_kgCO2eq'</span><span class="p">]</span> 
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_Virgin_Stock'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'v_MFG_gCO2eqpg'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQmfg_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_MFG_Scrap_Sentto_Recycling'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'LQ_Recycle_gCO2eqpg'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQeol_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_recycled_target'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'LQ_Recycle_gCO2eqpg'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQ_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQmfg_gCO2eq'</span><span class="p">]</span><span class="o">+</span><span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQeol_gCO2eq'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQmfg_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_MFG_Recycled_into_HQ'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'HQ_Recycle_gCO2eqpg'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQeol_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="p">[</span><span class="s1">'mat_EOL_Recycled_2_HQ'</span><span class="p">]</span><span class="o">*</span><span class="n">materialprocesscarbon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mat</span><span class="p">,</span><span class="s1">'HQ_Recycle_gCO2eqpg'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQ_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQmfg_gCO2eq'</span><span class="p">]</span><span class="o">+</span><span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQeol_gCO2eq'</span><span class="p">]</span> 
 </pre></div>
 
      </div>
@@ -15229,12 +17160,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dcmat</span>
@@ -15245,23 +17176,422 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>China_vmfg_elec_kgCO2eq</th>
+      <th>India_vmfg_elec_kgCO2eq</th>
+      <th>Taiwan_vmfg_elec_kgCO2eq</th>
+      <th>Germany_vmfg_elec_kgCO2eq</th>
+      <th>Japan_vmfg_elec_kgCO2eq</th>
+      <th>South Korea_vmfg_elec_kgCO2eq</th>
+      <th>Canada_vmfg_elec_kgCO2eq</th>
+      <th>Mexico_vmfg_elec_kgCO2eq</th>
+      <th>USA_vmfg_elec_kgCO2eq</th>
+      <th>Viet Nam_vmfg_elec_kgCO2eq</th>
+      <th>...</th>
+      <th>Global_vmfg_elec_kgCO2eq</th>
+      <th>mat_MFG_virgin_fuel_kgCO2eq</th>
+      <th>mat_MFGScrap_HQ_fuel_kgCO2eq</th>
+      <th>mat_vMFG_gCO2eq</th>
+      <th>mat_LQmfg_gCO2eq</th>
+      <th>mat_LQeol_gCO2eq</th>
+      <th>mat_LQ_gCO2eq</th>
+      <th>mat_HQmfg_gCO2eq</th>
+      <th>mat_HQeol_gCO2eq</th>
+      <th>mat_HQ_gCO2eq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4.728878e+11</td>
+      <td>2.803087e+11</td>
+      <td>4.786253e+10</td>
+      <td>1.349316e+11</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>4.221514e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>1.959789e+12</td>
+      <td>2.294188e+09</td>
+      <td>0.0</td>
+      <td>9.724380e+10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.421781e+11</td>
+      <td>8.755023e+10</td>
+      <td>1.522379e+10</td>
+      <td>4.136764e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.360186e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>6.008311e+11</td>
+      <td>7.385953e+08</td>
+      <td>0.0</td>
+      <td>3.300367e+10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.418067e+11</td>
+      <td>8.707958e+10</td>
+      <td>1.502241e+10</td>
+      <td>4.100611e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.284247e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>5.965940e+11</td>
+      <td>7.852458e+08</td>
+      <td>0.0</td>
+      <td>3.870478e+10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.760954e+11</td>
+      <td>1.059363e+11</td>
+      <td>1.859398e+10</td>
+      <td>5.040686e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>1.600275e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>7.354173e+11</td>
+      <td>1.094600e+09</td>
+      <td>0.0</td>
+      <td>5.752926e+10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.911213e+11</td>
+      <td>1.696503e+11</td>
+      <td>3.113420e+10</td>
+      <td>8.263223e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>2.504335e+10</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>...</td>
+      <td>1.201486e+12</td>
+      <td>1.838380e+09</td>
+      <td>0.0</td>
+      <td>1.045296e+11</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+      <td>3.872199e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+      <td>3.872199e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+      <td>3.872199e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+      <td>3.872199e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>1.286326e+13</td>
+      <td>4.758529e+11</td>
+      <td>1.434843e+11</td>
+      <td>6.520059e+10</td>
+      <td>4.528280e+10</td>
+      <td>2.650263e+11</td>
+      <td>9.101990e+09</td>
+      <td>3.871389e+10</td>
+      <td>9.900447e+10</td>
+      <td>6.020055e+11</td>
+      <td>...</td>
+      <td>3.099822e+13</td>
+      <td>3.195581e+10</td>
+      <td>0.0</td>
+      <td>3.872199e+12</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 30 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#sum carbon stuff</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_energy_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'Global_vmfg_elec_kgCO2eq'</span><span class="p">]</span><span class="o">+</span><span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_MFG_virgin_fuel_kgCO2eq'</span><span class="p">]</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_total_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_energy_kgCO2eq'</span><span class="p">]</span><span class="o">+</span><span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_kgCO2eq'</span><span class="p">]</span>
-<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_Recycle_kgCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQ_kgCO2eq'</span><span class="p">]</span> <span class="o">+</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQ_kgCO2eq'</span><span class="p">]</span> <span class="o">+</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_MFGScrap_HQ_fuel_kgCO2eq'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_energy_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'Global_vmfg_elec_gCO2eq'</span><span class="p">]</span><span class="o">+</span><span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_MFG_virgin_fuel_gCO2eq'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_total_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_energy_gCO2eq'</span><span class="p">]</span><span class="o">+</span><span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_vMFG_gCO2eq'</span><span class="p">]</span>
+<span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_Recycle_gCO2eq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_HQ_gCO2eq'</span><span class="p">]</span> <span class="o">+</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_LQ_gCO2eq'</span><span class="p">]</span> <span class="o">+</span> <span class="n">dcmat</span><span class="p">[</span><span class="s1">'mat_MFGScrap_HQ_fuel_gCO2eq'</span><span class="p">]</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
+File <span class="ansi-green-intense-fg ansi-bold">C:\ProgramData\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:3653</span>, in <span class="ansi-cyan-fg">Index.get_loc</span><span class="ansi-blue-intense-fg ansi-bold">(self, key)</span>
+<span class="ansi-green-fg">   3652</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 3653</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_engine<span style="color: rgb(98,98,98)">.</span>get_loc(casted_key)
+<span class="ansi-green-fg">   3654</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">KeyError</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> err:
+
+File <span class="ansi-green-intense-fg ansi-bold">C:\ProgramData\anaconda3\Lib\site-packages\pandas\_libs\index.pyx:147</span>, in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+File <span class="ansi-green-intense-fg ansi-bold">C:\ProgramData\anaconda3\Lib\site-packages\pandas\_libs\index.pyx:176</span>, in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+File <span class="ansi-green-intense-fg ansi-bold">pandas\_libs\hashtable_class_helper.pxi:7080</span>, in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+File <span class="ansi-green-intense-fg ansi-bold">pandas\_libs\hashtable_class_helper.pxi:7088</span>, in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#39;Global_vmfg_elec_gCO2eq&#39;
+
+The above exception was the direct cause of the following exception:
+
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
+Cell <span class="ansi-green-intense-fg ansi-bold">In[33], line 2</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)">#sum carbon stuff</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span> dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_vMFG_energy_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">=</span> dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Global_vmfg_elec_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">+</span>dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_MFG_virgin_fuel_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>]
+<span class="ansi-green-fg">      3</span> dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_vMFG_total_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">=</span> dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_vMFG_energy_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">+</span>dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_vMFG_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>]
+<span class="ansi-green-fg">      4</span> dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_Recycle_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">=</span> dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_HQ_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">+</span> dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_LQ_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">+</span> dcmat[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">mat_MFGScrap_HQ_fuel_gCO2eq</span><span style="color: rgb(175,0,0)">&#39;</span>]
+
+File <span class="ansi-green-intense-fg ansi-bold">C:\ProgramData\anaconda3\Lib\site-packages\pandas\core\frame.py:3761</span>, in <span class="ansi-cyan-fg">DataFrame.__getitem__</span><span class="ansi-blue-intense-fg ansi-bold">(self, key)</span>
+<span class="ansi-green-fg">   3759</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>columns<span style="color: rgb(98,98,98)">.</span>nlevels <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">1</span>:
+<span class="ansi-green-fg">   3760</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_getitem_multilevel(key)
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 3761</span> indexer <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>columns<span style="color: rgb(98,98,98)">.</span>get_loc(key)
+<span class="ansi-green-fg">   3762</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> is_integer(indexer):
+<span class="ansi-green-fg">   3763</span>     indexer <span style="color: rgb(98,98,98)">=</span> [indexer]
+
+File <span class="ansi-green-intense-fg ansi-bold">C:\ProgramData\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:3655</span>, in <span class="ansi-cyan-fg">Index.get_loc</span><span class="ansi-blue-intense-fg ansi-bold">(self, key)</span>
+<span class="ansi-green-fg">   3653</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_engine<span style="color: rgb(98,98,98)">.</span>get_loc(casted_key)
+<span class="ansi-green-fg">   3654</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">KeyError</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> err:
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 3655</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">KeyError</span>(key) <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">err</span>
+<span class="ansi-green-fg">   3656</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">TypeError</span>:
+<span class="ansi-green-fg">   3657</span>     <span style="color: rgb(95,135,135)"># If we have a listlike key, _check_indexing_error will raise</span>
+<span class="ansi-green-fg">   3658</span>     <span style="color: rgb(95,135,135)">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
+<span class="ansi-green-fg">   3659</span>     <span style="color: rgb(95,135,135)">#  the TypeError.</span>
+<span class="ansi-green-fg">   3660</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_check_indexing_error(key)
+
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#39;Global_vmfg_elec_gCO2eq&#39;</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">

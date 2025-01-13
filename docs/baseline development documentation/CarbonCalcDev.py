@@ -34,22 +34,31 @@ de = pd.read_pickle('dataOut_e.pkl')
 de_in = pd.read_pickle('dataIn_e.pkl')
 
 
-# In[ ]:
-
-
-
-
-
 # In[3]:
+
+
+df
+
+
+# In[12]:
 
 
 gridemissionfactors = pd.read_csv(os.path.join(carbonfolder,'baseline_electricityemissionfactors.csv'))
 materialprocesscarbon = pd.read_csv(os.path.join(carbonfolder,'baseline_materials_processCO2.csv'), index_col='Material')
-countrygridmixes = pd.read_csv(os.path.join(carbonfolder, 'baseline_countrygridmix.csv'))
-countrymodmfg = pd.read_csv(os.path.join(carbonfolder, 'baseline_module_countrymarketshare.csv'))
+countrygridmixes = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_countrygridmix.csv')) #2000 to 2050 or 2100
+countrymodmfg = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_module_countrymarketshare.csv')) #currently 2000 to 2100 or 2050
+
+#baseline_module_countrymarketshare = 1995 to 2050
+#
 
 
-# In[4]:
+# In[13]:
+
+
+len(countrymodmfg)
+
+
+# In[14]:
 
 
 #carbon intensity of country grid mixes
@@ -75,13 +84,19 @@ country_carbonpkwh = pd.DataFrame(final_country_carbon_int).T
 country_carbonpkwh.columns = countrylist
 
 
-# In[5]:
+# In[15]:
 
 
 fuelemitfactor
 
 
-# In[ ]:
+# In[16]:
+
+
+country_carbonpkwh
+
+
+# In[17]:
 
 
 #carbon intensity of module manufacturing weighted by country
@@ -100,19 +115,19 @@ modmfg_co2eqpkwh_bycountry = pd.DataFrame(countrycarbon_modmfg_co2eqpkwh).T #
 modmfg_co2eqpkwh_bycountry['Global_kgCO2eqpkWh'] = modmfg_co2eqpkwh_bycountry.sum(axis=1) #annual carbon intensity of pv module mfg wtd by country
 
 
-# In[6]:
+# In[18]:
 
 
 de
 
 
-# In[ ]:
+# In[19]:
 
 
 modmfg_co2eqpkwh_bycountry
 
 
-# In[ ]:
+# In[20]:
 
 
 #carbon impacts module mfging wtd by country
@@ -122,7 +137,7 @@ dc = dc.add_suffix('_mod_MFG_kgCO2eq')
 
 
 
-# In[ ]:
+# In[21]:
 
 
 #carbon impacts other module level steps
@@ -138,7 +153,7 @@ dc['mod_ReMFG_Disassembly_kgCO2eq'] = de['mod_ReMFG_Disassembly']*country_carbon
 dc['mod_Recycle_Crush_kgCO2eq'] = de['mod_Recycle_Crush']*country_carbonpkwh[country_deploy]
 
 
-# In[ ]:
+# In[22]:
 
 
 dc.tail()
@@ -146,7 +161,7 @@ dc.tail()
 
 # # Material Level
 
-# In[ ]:
+# In[23]:
 
 
 matEnergy = pd.read_pickle('matdataIn_e.pkl')
@@ -158,15 +173,16 @@ dm = pd.read_pickle('matdataOut_m.pkl')
 #e_mat_Recycled_HQ_fuelfraction
 
 
-# In[ ]:
+# In[24]:
 
 
-countrymatmfg = pd.read_csv(os.path.join(carbonfolder, 'baseline_silicon_MFGing_countrymarketshare.csv'))
+countrymatmfg = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_silicon_MFGing_countrymarketshare.csv')) #2000-2100
+#baseline_silicon_MFGing_countrymarketshare = 1995 through 2050
 #countrymatmfg.head()
 mat='silicon'
 
 
-# In[ ]:
+# In[25]:
 
 
 #carbon intensity of material manufacturing weighted by country
@@ -185,7 +201,13 @@ matmfg_co2eqpkwh_bycountry = pd.DataFrame(countrycarbon_modmfg_co2eqpkwh).T #
 matmfg_co2eqpkwh_bycountry['Global_kgCO2eqpkWh'] = modmfg_co2eqpkwh_bycountry.sum(axis=1) #annual carbon intensity of pv module mfg wtd by country
 
 
-# In[ ]:
+# In[27]:
+
+
+matmfg_co2eqpkwh_bycountry
+
+
+# In[28]:
 
 
 #carbon impacts mat mfging wtd by country
@@ -195,44 +217,44 @@ dcmat.rename(columns={'Global_kgCO2eqpkWh':'Global'}, inplace=True)
 dcmat = dcmat.add_suffix('_vmfg_elec_kgCO2eq')
 
 #fuel CO2 impacts
-steamHeat = list(gridemissionfactors[gridemissionfactors['Energy Source']=='SteamAndHeat']['CO2_kgpkWh_EPA'])[0]
+steamHeat = list(gridemissionfactors[gridemissionfactors['Energy Source']=='SteamAndHeat']['CO2_gpWh_EPA'])[0]
 dcmat['mat_MFG_virgin_fuel_kgCO2eq'] = demat['mat_MFG_virgin_fuel']*steamHeat #CO2 from mfging fuels
 dcmat['mat_MFGScrap_HQ_fuel_kgCO2eq'] = demat['mat_MFGScrap_HQ_fuel']*steamHeat #CO2 from recycling fuels
 
 
-# In[ ]:
+# In[29]:
 
 
 dcmat
 
 
-# In[ ]:
+# In[31]:
 
 
 #CO2 process emissions from MFGing (v, lq, hq)
 #mass of material being processed in each stream * CO2 intensity of that process
-dcmat['mat_vMFG_kgCO2eq'] = dm['mat_Virgin_Stock']*materialprocesscarbon.loc[mat,'v_MFG_kgCO2eqpkg']
-dcmat['mat_LQmfg_kgCO2eq'] = dm['mat_MFG_Scrap_Sentto_Recycling']*materialprocesscarbon.loc[mat,'LQ_Recycle_kgCO2eqpkg']
-dcmat['mat_LQeol_kgCO2eq'] = dm['mat_recycled_target']*materialprocesscarbon.loc[mat,'LQ_Recycle_kgCO2eqpkg']
-dcmat['mat_LQ_kgCO2eq'] = dcmat['mat_LQmfg_kgCO2eq']+dcmat['mat_LQeol_kgCO2eq']
-dcmat['mat_HQmfg_kgCO2eq'] = dm['mat_MFG_Recycled_into_HQ']*materialprocesscarbon.loc[mat,'HQ_Recycle_kgCO2eqpkg']
-dcmat['mat_HQeol_kgCO2eq'] = dm['mat_EOL_Recycled_2_HQ']*materialprocesscarbon.loc[mat,'HQ_Recycle_kgCO2eqpkg']
-dcmat['mat_HQ_kgCO2eq'] = dcmat['mat_HQmfg_kgCO2eq']+dcmat['mat_HQeol_kgCO2eq'] 
+dcmat['mat_vMFG_gCO2eq'] = dm['mat_Virgin_Stock']*materialprocesscarbon.loc[mat,'v_MFG_gCO2eqpg']
+dcmat['mat_LQmfg_gCO2eq'] = dm['mat_MFG_Scrap_Sentto_Recycling']*materialprocesscarbon.loc[mat,'LQ_Recycle_gCO2eqpg']
+dcmat['mat_LQeol_gCO2eq'] = dm['mat_recycled_target']*materialprocesscarbon.loc[mat,'LQ_Recycle_gCO2eqpg']
+dcmat['mat_LQ_gCO2eq'] = dcmat['mat_LQmfg_gCO2eq']+dcmat['mat_LQeol_gCO2eq']
+dcmat['mat_HQmfg_gCO2eq'] = dm['mat_MFG_Recycled_into_HQ']*materialprocesscarbon.loc[mat,'HQ_Recycle_gCO2eqpg']
+dcmat['mat_HQeol_gCO2eq'] = dm['mat_EOL_Recycled_2_HQ']*materialprocesscarbon.loc[mat,'HQ_Recycle_gCO2eqpg']
+dcmat['mat_HQ_gCO2eq'] = dcmat['mat_HQmfg_gCO2eq']+dcmat['mat_HQeol_gCO2eq'] 
 
 
-# In[ ]:
+# In[32]:
 
 
 dcmat
 
 
-# In[ ]:
+# In[33]:
 
 
 #sum carbon stuff
-dcmat['mat_vMFG_energy_kgCO2eq'] = dcmat['Global_vmfg_elec_kgCO2eq']+dcmat['mat_MFG_virgin_fuel_kgCO2eq']
-dcmat['mat_vMFG_total_kgCO2eq'] = dcmat['mat_vMFG_energy_kgCO2eq']+dcmat['mat_vMFG_kgCO2eq']
-dcmat['mat_Recycle_kgCO2eq'] = dcmat['mat_HQ_kgCO2eq'] + dcmat['mat_LQ_kgCO2eq'] + dcmat['mat_MFGScrap_HQ_fuel_kgCO2eq']
+dcmat['mat_vMFG_energy_gCO2eq'] = dcmat['Global_vmfg_elec_gCO2eq']+dcmat['mat_MFG_virgin_fuel_gCO2eq']
+dcmat['mat_vMFG_total_gCO2eq'] = dcmat['mat_vMFG_energy_gCO2eq']+dcmat['mat_vMFG_gCO2eq']
+dcmat['mat_Recycle_gCO2eq'] = dcmat['mat_HQ_gCO2eq'] + dcmat['mat_LQ_gCO2eq'] + dcmat['mat_MFGScrap_HQ_fuel_gCO2eq']
 
 
 # In[ ]:

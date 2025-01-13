@@ -16148,11 +16148,11 @@ pyplot  3.7.2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#add in the 1995 to 2000 and present to 2050, ffill and bfill</span>
-<span class="n">indx_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span><span class="mi">2051</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">indx_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2051</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">gridmix_bycountry_1995to2050</span> <span class="o">=</span> <span class="n">gridmix_bycountry_2000topresent</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">indx_temp</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span> <span class="c1">#still leaving NaN if 2023 value NaN</span>
 <span class="n">gridmix_bycountry_1995to2050_full</span> <span class="o">=</span> <span class="n">gridmix_bycountry_1995to2050</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">'ffill'</span><span class="p">)</span> <span class="c1">#fix nan values throughout</span>
 <span class="n">gridmix_bycountry_1995to2050_full</span>
@@ -16173,7 +16173,7 @@ pyplot  3.7.2
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
 
@@ -16220,126 +16220,6 @@ pyplot  3.7.2
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>1995</th>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>64.58</td>
-      <td>0.0</td>
-      <td>35.42</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.46</td>
-      <td>47.96</td>
-      <td>...</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>53.36</td>
-      <td>0.0</td>
-      <td>45.64</td>
-      <td>0.0</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1996</th>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>64.58</td>
-      <td>0.0</td>
-      <td>35.42</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.46</td>
-      <td>47.96</td>
-      <td>...</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>53.36</td>
-      <td>0.0</td>
-      <td>45.64</td>
-      <td>0.0</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1997</th>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>64.58</td>
-      <td>0.0</td>
-      <td>35.42</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.46</td>
-      <td>47.96</td>
-      <td>...</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>53.36</td>
-      <td>0.0</td>
-      <td>45.64</td>
-      <td>0.0</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1998</th>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>64.58</td>
-      <td>0.0</td>
-      <td>35.42</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.46</td>
-      <td>47.96</td>
-      <td>...</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>53.36</td>
-      <td>0.0</td>
-      <td>45.64</td>
-      <td>0.0</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1999</th>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>64.58</td>
-      <td>0.0</td>
-      <td>35.42</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.46</td>
-      <td>47.96</td>
-      <td>...</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>53.36</td>
-      <td>0.0</td>
-      <td>45.64</td>
-      <td>0.0</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.0</td>
-    </tr>
     <tr>
       <th>2000</th>
       <td>0.0</td>
@@ -17566,7 +17446,7 @@ pyplot  3.7.2
     </tr>
   </tbody>
 </table>
-<p>56 rows × 1800 columns</p>
+<p>51 rows × 1800 columns</p>
 </div>
 </div>
 
@@ -17641,7 +17521,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gridmix_bycountry_1995to2050_full</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">baselinesFolder</span><span class="p">,</span><span class="s1">'CarbonLayer'</span><span class="p">,</span><span class="s1">'baseline2050_countrygridmix.csv'</span><span class="p">))</span>
@@ -17657,11 +17537,11 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#add in the 1995 to 2000 and present to 2100, ffill and bfill</span>
-<span class="n">indx_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span><span class="mi">2101</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">indx_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2101</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">gridmix_bycountry_1995to2100</span> <span class="o">=</span> <span class="n">gridmix_bycountry_2000topresent</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">indx_temp</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span> <span class="c1">#still leaving NaN if 2023 value NaN</span>
 <span class="n">gridmix_bycountry_1995to2100_full</span> <span class="o">=</span> <span class="n">gridmix_bycountry_1995to2100</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">'ffill'</span><span class="p">)</span> <span class="c1">#fix nan values throughout</span>
 <span class="n">gridmix_bycountry_1995to2100_full</span>
@@ -17682,7 +17562,7 @@ class="
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -17730,7 +17610,7 @@ class="
   </thead>
   <tbody>
     <tr>
-      <th>1995</th>
+      <th>2000</th>
       <td>0.0</td>
       <td>0.00</td>
       <td>0.0</td>
@@ -17749,103 +17629,103 @@ class="
       <td>0.0</td>
       <td>45.64</td>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>0.00</td>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>1996</th>
+      <th>2001</th>
       <td>0.0</td>
-      <td>0.00</td>
+      <td>5.80</td>
       <td>0.0</td>
-      <td>64.58</td>
+      <td>72.46</td>
       <td>0.0</td>
-      <td>35.42</td>
+      <td>21.74</td>
       <td>0.00</td>
       <td>0.0</td>
       <td>0.46</td>
-      <td>47.96</td>
+      <td>47.17</td>
       <td>...</td>
       <td>0.00</td>
       <td>0.0</td>
       <td>0.00</td>
-      <td>53.36</td>
+      <td>62.15</td>
       <td>0.0</td>
-      <td>45.64</td>
+      <td>37.47</td>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.38</td>
       <td>0.00</td>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>1997</th>
+      <th>2002</th>
       <td>0.0</td>
+      <td>5.63</td>
+      <td>0.0</td>
+      <td>78.87</td>
+      <td>0.0</td>
+      <td>15.49</td>
       <td>0.00</td>
       <td>0.0</td>
-      <td>64.58</td>
-      <td>0.0</td>
-      <td>35.42</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.46</td>
-      <td>47.96</td>
+      <td>0.53</td>
+      <td>46.09</td>
       <td>...</td>
       <td>0.00</td>
       <td>0.0</td>
       <td>0.00</td>
-      <td>53.36</td>
+      <td>55.48</td>
       <td>0.0</td>
-      <td>45.64</td>
+      <td>44.41</td>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.12</td>
       <td>0.00</td>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>1998</th>
+      <th>2003</th>
       <td>0.0</td>
+      <td>9.89</td>
+      <td>0.0</td>
+      <td>69.23</td>
+      <td>0.0</td>
+      <td>20.88</td>
       <td>0.00</td>
       <td>0.0</td>
-      <td>64.58</td>
-      <td>0.0</td>
-      <td>35.42</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.46</td>
-      <td>47.96</td>
+      <td>0.50</td>
+      <td>46.70</td>
       <td>...</td>
       <td>0.00</td>
       <td>0.0</td>
       <td>0.00</td>
-      <td>53.36</td>
+      <td>39.14</td>
       <td>0.0</td>
-      <td>45.64</td>
+      <td>60.75</td>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.11</td>
       <td>0.00</td>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>1999</th>
+      <th>2004</th>
       <td>0.0</td>
+      <td>7.59</td>
+      <td>0.0</td>
+      <td>70.89</td>
+      <td>0.0</td>
+      <td>21.52</td>
       <td>0.00</td>
       <td>0.0</td>
-      <td>64.58</td>
-      <td>0.0</td>
-      <td>35.42</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.46</td>
-      <td>47.96</td>
+      <td>0.49</td>
+      <td>46.04</td>
       <td>...</td>
       <td>0.00</td>
       <td>0.0</td>
       <td>0.00</td>
-      <td>53.36</td>
+      <td>43.21</td>
       <td>0.0</td>
-      <td>45.64</td>
+      <td>56.58</td>
       <td>0.0</td>
-      <td>1.0</td>
+      <td>0.21</td>
       <td>0.00</td>
       <td>0.0</td>
     </tr>
@@ -17893,7 +17773,7 @@ class="
       <td>0.0</td>
       <td>65.85</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
       <td>0.34</td>
       <td>0.0</td>
     </tr>
@@ -17917,7 +17797,7 @@ class="
       <td>0.0</td>
       <td>65.85</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
       <td>0.34</td>
       <td>0.0</td>
     </tr>
@@ -17941,7 +17821,7 @@ class="
       <td>0.0</td>
       <td>65.85</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
       <td>0.34</td>
       <td>0.0</td>
     </tr>
@@ -17965,7 +17845,7 @@ class="
       <td>0.0</td>
       <td>65.85</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
       <td>0.34</td>
       <td>0.0</td>
     </tr>
@@ -17989,13 +17869,13 @@ class="
       <td>0.0</td>
       <td>65.85</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00</td>
       <td>0.34</td>
       <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>106 rows × 1800 columns</p>
+<p>101 rows × 1800 columns</p>
 </div>
 </div>
 
@@ -18010,7 +17890,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gridmix_bycountry_1995to2100_full</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">baselinesFolder</span><span class="p">,</span><span class="s1">'CarbonLayer'</span><span class="p">,</span><span class="s1">'baseline2100_countrygridmix.csv'</span><span class="p">))</span>

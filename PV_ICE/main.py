@@ -1648,7 +1648,7 @@ class Simulation:
         carbonfolder = Path(DATA_PATH) / 'CarbonLayer'
         
         if countrygridmixes is None:
-            countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline2100_countrygridmix.csv'))
+            countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline2100_countrygridmix.csv'))#2000-2100
         else:
             if isinstance(countrygridmixes, str):
                 countrygridmixes = pd.read_csv(countrygridmixes)
@@ -1656,10 +1656,10 @@ class Simulation:
                 countrygridmixes = countrygridmixes
         
         #default files
-        gridemissionfactors = pd.read_csv(os.path.join(carbonfolder,'baseline_electricityemissionfactors.csv'))
-        materialprocesscarbon = pd.read_csv(os.path.join(carbonfolder,'baseline_materials_processCO2.csv'), index_col='Material')
-        #countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline_countrygridmix.csv'))
-        countrymodmfg = pd.read_csv(os.path.join(carbonfolder,'baseline2100_module_countrymarketshare.csv'))
+        gridemissionfactors = pd.read_csv(os.path.join(carbonfolder,'baseline_electricityemissionfactors.csv')) #no date
+        materialprocesscarbon = pd.read_csv(os.path.join(carbonfolder,'baseline_materials_processCO2.csv'), index_col='Material') #no date
+        #countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline_countrygridmix.csv')) #2000-2050 or 2100
+        countrymodmfg = pd.read_csv(os.path.join(carbonfolder,'baseline2100_module_countrymarketshare.csv')) #2000-2100 OR 1995 to 2050
         
         
         

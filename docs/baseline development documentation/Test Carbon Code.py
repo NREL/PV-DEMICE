@@ -100,19 +100,19 @@ sim1.scenario['PV_ICE'].material['aluminium_frames'].matdataIn_e.tail(3)
 sim1.calculateFlows()
 
 
-# In[11]:
+# In[ ]:
 
 
 sim1.calculateCarbonFlows()
 
 
-# In[12]:
+# In[ ]:
 
 
 sim1.scenario['PV_ICE'].dataOut_c
 
 
-# In[13]:
+# In[ ]:
 
 
 sim1.scenario['PV_ICE'].material['aluminium_frames'].matdataOut_c
