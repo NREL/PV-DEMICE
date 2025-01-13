@@ -152,17 +152,17 @@ gridmix_bycountry_1995to2050_full.filter(like=areaofinterest).plot(kind='area', 
 gridmix_bycountry_1995to2050_full.to_csv(os.path.join(baselinesFolder,'CarbonLayer','baseline2050_countrygridmix.csv'))
 
 
-# In[20]:
+# In[23]:
 
 
 #add in the 1995 to 2000 and present to 2100, ffill and bfill
-indx_temp = pd.Series(range(2000,2101,1))
+indx_temp = pd.Series(range(1995,2101,1))
 gridmix_bycountry_1995to2100 = gridmix_bycountry_2000topresent.reindex(indx_temp, method='nearest') #still leaving NaN if 2023 value NaN
 gridmix_bycountry_1995to2100_full = gridmix_bycountry_1995to2100.fillna(method='ffill') #fix nan values throughout
 gridmix_bycountry_1995to2100_full
 
 
-# In[22]:
+# In[24]:
 
 
 gridmix_bycountry_1995to2100_full.to_csv(os.path.join(baselinesFolder,'CarbonLayer','baseline2100_countrygridmix.csv'))

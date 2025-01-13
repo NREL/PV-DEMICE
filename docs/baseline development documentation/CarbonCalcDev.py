@@ -52,10 +52,30 @@ countrymodmfg = pd.read_csv(os.path.join(carbonfolder, 'baseline2100_module_coun
 #
 
 
+# In[ ]:
+
+
+scen0 = scenarios[0] #static scenario of the first in the list
+dataStartYear = int(self.scenario[scen0].dataIn_m.iloc[0]['year'])
+dataEndYear = int(self.scenario[scen0].dataIn_m.iloc[-1]['year'])
+
+
 # In[13]:
 
 
-len(countrymodmfg)
+if int(endYear) > int(dataEndYear): # extend data with start trimming
+    lengthtoadd = int(endYear) - int(dataEndYear)
+    newIndex = pd.RangeIndex(0,lengthtoadd,1) #create a new index to append
+    add = pd.DataFrame(columns=baseline.columns, index=newIndex) #create empty df, using new index
+    extended = pd.concat([reduced,add]) #concat the trimmed df with the new extended years
+    
+    extended.reset_index(inplace=True, drop=True) #reset the index and don't include the old in new df
+    extended.ffill(inplace=True) #forward fill columns
+    # fix years
+    newYears = pd.Series(range(dataEndYear+1,endYear+1,1)) #create a series of years to overwrite the ffill
+    extended.loc[len(reduced):,'year'] = newYears.values
+    #print(extended.tail(5))
+    self.scenario[scen].dataIn_e = extended #reassign to the simulation
 
 
 # In[14]:

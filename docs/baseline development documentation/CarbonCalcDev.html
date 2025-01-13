@@ -15020,6 +15020,24 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span>        <span class="n">scen0</span> <span class="o">=</span> <span class="n">scenarios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#static scenario of the first in the list</span>
+        <span class="n">dataStartYear</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="n">scen0</span><span class="p">]</span><span class="o">.</span><span class="n">dataIn_m</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'year'</span><span class="p">])</span>
+        <span class="n">dataEndYear</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="n">scen0</span><span class="p">]</span><span class="o">.</span><span class="n">dataIn_m</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">'year'</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15028,7 +15046,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">countrymodmfg</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span>                    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">endYear</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">dataEndYear</span><span class="p">):</span> <span class="c1"># extend data with start trimming</span>
+                        <span class="n">lengthtoadd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">endYear</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">dataEndYear</span><span class="p">)</span>
+                        <span class="n">newIndex</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">RangeIndex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lengthtoadd</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#create a new index to append</span>
+                        <span class="n">add</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">baseline</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">newIndex</span><span class="p">)</span> <span class="c1">#create empty df, using new index</span>
+                        <span class="n">extended</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">reduced</span><span class="p">,</span><span class="n">add</span><span class="p">])</span> <span class="c1">#concat the trimmed df with the new extended years</span>
+                        
+                        <span class="n">extended</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#reset the index and don't include the old in new df</span>
+                        <span class="n">extended</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#forward fill columns</span>
+                        <span class="c1"># fix years</span>
+                        <span class="n">newYears</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">dataEndYear</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">endYear</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1">#create a series of years to overwrite the ffill</span>
+                        <span class="n">extended</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">reduced</span><span class="p">):,</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">newYears</span><span class="o">.</span><span class="n">values</span>
+                        <span class="c1">#print(extended.tail(5))</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">scenario</span><span class="p">[</span><span class="n">scen</span><span class="p">]</span><span class="o">.</span><span class="n">dataIn_e</span> <span class="o">=</span> <span class="n">extended</span> <span class="c1">#reassign to the simulation</span>
 </pre></div>
 
      </div>

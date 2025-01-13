@@ -1648,7 +1648,7 @@ class Simulation:
         carbonfolder = Path(DATA_PATH) / 'CarbonLayer'
         
         if countrygridmixes is None:
-            countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline2100_countrygridmix.csv'))#2000-2100 OR 2000-2050
+            countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline2100_countrygridmix.csv'))#1995-2100
         else:
             if isinstance(countrygridmixes, str):
                 countrygridmixes = pd.read_csv(countrygridmixes)
@@ -1659,7 +1659,7 @@ class Simulation:
         gridemissionfactors = pd.read_csv(os.path.join(carbonfolder,'baseline_electricityemissionfactors.csv')) #no date
         materialprocesscarbon = pd.read_csv(os.path.join(carbonfolder,'baseline_materials_processCO2.csv'), index_col='Material') #no date
         #countrygridmixes = pd.read_csv(os.path.join(carbonfolder,'baseline_countrygridmix.csv')) #2000-2050 or 2100
-        countrymodmfg = pd.read_csv(os.path.join(carbonfolder,'baseline2100_module_countrymarketshare.csv')) #2000-2100 OR 1995 to 2050
+        countrymodmfg = pd.read_csv(os.path.join(carbonfolder,'baseline_module_countrymarketshare.csv')) #1995-2100
         
         
         
@@ -1749,7 +1749,7 @@ class Simulation:
                     demat = self.scenario[scen].material[mat].matdataOut_e
                     dm = self.scenario[scen].material[mat].matdataOut_m               
                     
-                    matfilename = 'baseline2100_'+str(mat)+'_MFGing_countrymarketshare.csv'
+                    matfilename = 'baseline_'+str(mat)+'_MFGing_countrymarketshare.csv' #1995-2100
                     countrymatmfg = pd.read_csv(os.path.join(carbonfolder, matfilename))
                 
                     #carbon intensity of material manufacturing weighted by country
