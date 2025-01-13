@@ -1675,7 +1675,7 @@ class Simulation:
             #select years of carbon data to use in calc based on scen out of 1995-2100
             scenStartYear = int(self.scenario[scen].dataIn_m.iloc[0]['year'])
             scenEndYear = int(self.scenario[scen].dataIn_m.iloc[-1]['year'])
-            if scenStartYear<1995|scenEndYear>2100:
+            if (scenStartYear<1995)|(scenEndYear>2100):
                 print("Scenario years fall outside the carbon baselines, please address.")
                 return
             
